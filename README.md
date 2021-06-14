@@ -24,7 +24,7 @@ Utilisez la commande .help pour vous y retrouver,vous pouvez même avoir des inf
 Music module inspired by ![EvoBot](https://github.com/eritislami)
 
 # Avec quoi est conçu ce bot ? 
-Ce bot est conçu avec L'API de Discord, celle de https://fortnitetracker.com/ pour la commande .fortnite (pseudo pc,psn,xb1|store), random-puppy pour la récupération des memes via Reddit et celle de YouTube pour la partie musicale.
+Ce bot est conçu avec L'API de Discord, random-puppy pour la récupération des memes via Reddit et celle de YouTube pour la partie musicale.
 
 # Invitation :
 
