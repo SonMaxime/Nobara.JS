@@ -16,7 +16,6 @@
 # Requis : 
 - Node.JS
 - Un token Discord : https://discordapp.com/developers/applications/ID-de-votre-bot/bots (a replacer dans le fichier `config.js` avec DISCORDTOKEN)
-- Un token FortniteTracker : https://tracker.gg/developers/ (à remplacer dans le fichier `config.js` avec FTNTOKEN)
 - Les modules déjà pré-installés dans le fichier `package.json`.
 - Une base de données MongoDB : ![Tutoriel Ici](https://github.com/SonMaxime/HorizonBot/wiki/Base-de-donn%C3%A9es-Mongo.)
 - Une clé d'accès YouTube API
