@@ -1,9 +1,6 @@
 ![node-soundcloud-downloader](https://socialify.git.ci/SonMaxime/Nobara.JS/image?description=1&font=Raleway&forks=1&issues=1&language=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark)
 
 <p>
-  <a href="https://github.com/SonMaxime/Nobara.JS/master/LICENSE" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
-  </a>
   <a href="https://twitter.com/SonMaxime_" target="_blank">
     <img alt="Twitter: SonMaxime" src="https://img.shields.io/twitter/follow/sonmaxime_.svg?style=social" />
   </a>
