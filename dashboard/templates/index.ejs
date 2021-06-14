@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <%- include("partials/head", { bot, user, path, title: "Acceuil" }) %>
+</head>
+
+<style>
+    body {
+      background: #393e46;
+      color: #eeeeee;
+      font-family: Arial;
+      font-size: 16px;
+    }
+</style>
+
+<body class="container">
+    <header>
+        <%- include("partials/header", { bot, user, path, title: "Acceuil" }) %>
+    </header>
+
+    <main>
+
+        <div class="jumbotron">
+            <style>
+                p {
+                  color: black;
+                }
+                </style>
+            <a href="/dashboard">Aller au pannel de configuration</a><br>
+
+            <p>Bonjour/soir à tous, bienvenue sur l'acceuil utilisateur de Horizon. Un bot crée par SonMaxime, un jeune dev. ayant initié ce projet de ces propores mains. Projet ayant commencé en Novembre 2018, notre jeune developpeur n'avait aucune connaissance pour faire un bot. Aujourd'hui, le projet a bien évolué laissant tout de même un abandon de plusieurs mois.</p>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <%- include("partials/footer") %>
+
+    </footer>
+
+</body>
+</html>
