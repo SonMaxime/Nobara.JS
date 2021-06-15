@@ -6,8 +6,8 @@ module.exports.run = async (client, message, args, settings) => {
   if (!args.length) {
     const menuEmbed = new MessageEmbed()
     .setColor("#36393F")
-    .setTitle('Help Menu of Horizon')
-    .setDescription("Réagissez en dessous pour accéder à la liste d'une catégorie.")
+    .setTitle('Help Menu of Nobara')
+    .setDescription(message.guild.language.listOfCommandsDescription)
     .addFields(
       {name: ":gear: `Admin` : ", value: `${message.guild.language.adminDescription}`},
       {name: ":video_game: `Fun` : ", value: `${message.guild.language.funDescription}`},
@@ -18,7 +18,6 @@ module.exports.run = async (client, message, args, settings) => {
       {name: ":chart_with_upwards_trend: `Stats` : ", value: `${message.guild.language.statsDescription}`},
       {name: ":crossed_swords: `XP` : ", value: `${message.guild.language.xpDescription}`}
     )
-    .setFooter("Dashboard : http://185.44.81.138:1196/")
     var reactionMessage = await message.channel.send(menuEmbed)
     await reactionMessage.react("⚙️");
     await reactionMessage.react("🎮");
@@ -26,7 +25,6 @@ module.exports.run = async (client, message, args, settings) => {
     await reactionMessage.react("🛠️");
     await reactionMessage.react("🎵");
     await reactionMessage.react("📰");
-    await reactionMessage.react("📈");
     await reactionMessage.react("⚔️");
     await reactionMessage.react("🏠");
     await reactionMessage.react("⏹");
@@ -42,15 +40,15 @@ module.exports.run = async (client, message, args, settings) => {
       switch (reaction.emoji.name) {
         case "🎵":
           reaction.users.remove(user).catch(console.error);
-          const npcommand = client.commands.get("nowplaying")
-          const playcommand = client.commands.get("play")
-          const playlistcommand = client.commands.get("playlist")
-          const queuecommand = client.commands.get("queue")
-          const removecommand = client.commands.get("remove")
-          const skiptocommand = client.commands.get("skipto")
+          const npcommand = client.commands.get("nowplaying");
+          const playcommand = client.commands.get("play");
+          const playlistcommand = client.commands.get("playlist");
+          const queuecommand = client.commands.get("queue");
+          const removecommand = client.commands.get("remove");
+          const skiptocommand = client.commands.get("skipto");
           const musicEmbed = new MessageEmbed()
           .setTitle('Music Help')
-          .setDescription("Réagissez en dessous pour accéder à la liste d'une catégorie.")
+          .setDescription(message.guild.language.listOfCommandsDescription)
           .addFields(
             {name: "`nowplaying` :", value: `${npcommand.help.description}`},
             {name: "`play` : ", value: `${playcommand.help.description}`},
@@ -59,35 +57,33 @@ module.exports.run = async (client, message, args, settings) => {
             {name: "`remove` : ", value: `${removecommand.help.description}`},
             {name: "`skipto` : ", value: `${skiptocommand.help.description}`},
           )
-          .setFooter("Dashboard : http://185.44.81.138:1196/")
          reactionMessage.edit(musicEmbed);
           break;
 
         case "🎮":
           reaction.users.remove(user).catch(console.error);
-          const ballcommand = client.commands.get("8ball")
-          const rpscommand = client.commands.get("rps")
+          const ballcommand = client.commands.get("8ball");
+          const rpscommand = client.commands.get("rps");
           const funEmbed = new MessageEmbed()
           .setTitle('Fun Help')
-          .setDescription("Réagissez en dessous pour accéder à la liste d'une catégorie.")
+          .setDescription(message.guild.language.listOfCommandsDescription)
           .addFields(
             {name: "`8ball` :", value: `${ballcommand.help.description}`},
             {name: "`rps` : ", value: `${rpscommand.help.description}`}
           )
-          .setFooter("Dashboard : http://185.44.81.138:1196/")
          reactionMessage.edit(funEmbed);
           break;
 
         case "💭":
           reaction.users.remove(user).catch(console.error);
-          const botinfocommand = client.commands.get("botinfo")
-          const helpcommand = client.commands.get("help")
-          const invitecommand = client.commands.get("invite")
-          const pollcommand = client.commands.get("poll")
-          const saycommand = client.commands.get("say")
+          const botinfocommand = client.commands.get("botinfo");
+          const helpcommand = client.commands.get("help");
+          const invitecommand = client.commands.get("invite");
+          const pollcommand = client.commands.get("poll");
+          const saycommand = client.commands.get("say");
           const generalEmbed = new MessageEmbed()
           .setTitle('General Help')
-          .setDescription("Réagissez en dessous pour accéder à la liste d'une catégorie.")
+          .setDescription(message.guild.language.listOfCommandsDescription)
           .addFields(
             {name: "`botinfo` :", value: `${botinfocommand.help.description}`},
             {name: "`help` : ", value: `${helpcommand.help.description}`},
@@ -95,23 +91,22 @@ module.exports.run = async (client, message, args, settings) => {
             {name: "`poll` : ", value: `${pollcommand.help.description}`},
             {name: "`say` : ", value: `${saycommand.help.description}`}
           )
-          .setFooter("Dashboard : http://185.44.81.138:1196/")
          reactionMessage.edit(generalEmbed);
           break;
 
         case "🛠️":
           reaction.users.remove(user).catch(console.error);
-          const bancommand = client.commands.get("ban")
-          const kickcommand = client.commands.get("kick")
-          const languagecommand = client.commands.get("language")
-          const mutecommand = client.commands.get("mute")
-          const purgecommand = client.commands.get("purge")
-          const unbancommand = client.commands.get("unban")
-          const unmutecommand = client.commands.get("unmute")
-          const votekickcommand = client.commands.get("votekick")
+          const bancommand = client.commands.get("ban");
+          const kickcommand = client.commands.get("kick");
+          const languagecommand = client.commands.get("language");
+          const mutecommand = client.commands.get("mute");
+          const purgecommand = client.commands.get("purge");
+          const unbancommand = client.commands.get("unban");
+          const unmutecommand = client.commands.get("unmute");
+          const votekickcommand = client.commands.get("votekick");
           const modEmbed = new MessageEmbed()
           .setTitle('Moderation Help')
-          .setDescription("Réagissez en dessous pour accéder à la liste d'une catégorie.")
+          .setDescription(message.guild.language.listOfCommandsDescription)
           .addFields(
             {name: "`ban` :", value: `${bancommand.help.description}`},
             {name: "`kick` : ", value: `${kickcommand.help.description}`},
@@ -122,57 +117,39 @@ module.exports.run = async (client, message, args, settings) => {
             {name: "`unmute` : ", value: `${unmutecommand.help.description}`},
             {name: "`votekick` : ", value: `${votekickcommand.help.description}`}
           )
-          .setFooter("Dashboard : http://185.44.81.138:1196/")
          reactionMessage.edit(modEmbed);
           break;
 
         case "⚙️":
           reaction.users.remove(user).catch(console.error);
-          const configdbcommand = client.commands.get("configdb")
-          const evalcommand = client.commands.get("eval")
+          const configdbcommand = client.commands.get("configdb");
+          const evalcommand = client.commands.get("eval");
+          const setwelcomecommand = client.commands.get("setwelcome");
           const adminEmbed = new MessageEmbed()
           .setTitle('Admin Help')
-          .setDescription("Réagissez en dessous pour accéder à la liste d'une catégorie.")
+          .setDescription(message.guild.language.listOfCommandsDescription)
           .addFields(
             {name: "`configdb` :", value: `${configdbcommand.help.description}`},
-            {name: "`eval` : ", value: `${evalcommand.help.description}`}
+            {name: "`eval` : ", value: `${evalcommand.help.description}`},
+            {name: "`setwelcome` : ", value: `${setwelcomecommand.help.description}`}
           )
-          .setFooter("Dashboard : http://185.44.81.138:1196/")
          reactionMessage.edit(adminEmbed);
           break;
 
         case "📰":
           reaction.users.remove(user).catch(console.error);
-          const animecommand = client.commands.get("anime")
-          const hmmmcommand = client.commands.get("hmmm")
-          const memecommand = client.commands.get("meme")
+          const animecommand = client.commands.get("anime");
+          const hmmmcommand = client.commands.get("hmmm");
+          const memecommand = client.commands.get("meme");
           const reeditEmbed = new MessageEmbed()
           .setTitle('Meme Help')
-          .setDescription("Réagissez en dessous pour accéder à la liste d'une catégorie.")
+          .setDescription(message.guild.language.listOfCommandsDescription)
           .addFields(
             {name: "`anime` :", value: `${animecommand.help.description}`},
             {name: "`hmmm` : ", value: `${hmmmcommand.help.description}`},
             {name: "`meme` : ", value: `${memecommand.help.description}`}
           )
-          .setFooter("Dashboard : http://185.44.81.138:1196/")
          reactionMessage.edit(reeditEmbed);
-          break;
-
-        case "📈":
-          reaction.users.remove(user).catch(console.error);
-          const apexcommand = client.commands.get("apex")
-          const fortnitecommand = client.commands.get("fortnite")
-          const fortnitedevbuildcommand = client.commands.get("fortnitedevbuild")
-          const statsEmbed = new MessageEmbed()
-          .setTitle('Stats Help')
-          .setDescription("Réagissez en dessous pour accéder à la liste d'une catégorie.")
-          .addFields(
-            {name: "`apex` :", value: `${apexcommand.help.description}`},
-            {name: "`fortnite` : ", value: `${fortnitecommand.help.description}`},
-            {name: "`fortnitedevbuild` : ", value: `${fortnitedevbuildcommand.help.description}`}
-          )
-          .setFooter("Dashboard : http://185.44.81.138:1196/")
-         reactionMessage.edit(statsEmbed);
           break;
 
         case "🏠":
@@ -182,14 +159,14 @@ module.exports.run = async (client, message, args, settings) => {
 
         case "🏠":
           reaction.users.remove(user).catch(console.error);
-          const addxpcommand = client.commands.get("apex")
-          const expcommand = client.commands.get("fortnite")
+          const addxpcommand = client.commands.get("addxp")
+          const expcommand = client.commands.get("exp")
           const leaderboardcommand = client.commands.get("leaderboard")
           const levelcommand = client.commands.get("level")
           const removexpcommand = client.commands.get("removexp")
           const xpEmbed = new MessageEmbed()
           .setTitle('Admin Help')
-          .setDescription("Réagissez en dessous pour accéder à la liste d'une catégorie.")
+          .setDescription(message.guild.language.listOfCommandsDescription)
           .addFields(
             {name: "`addxp` :", value: `${addxpcommand.help.description}`},
             {name: "`exp` : ", value: `${expcommand.help.description}`},
@@ -197,7 +174,6 @@ module.exports.run = async (client, message, args, settings) => {
             {name: "`level` : ", value: `${levelcommand.help.description}`},
             {name: "`removexp` : ", value: `${removexpcommand.help.description}`}
           )
-          .setFooter("Dashboard : http://185.44.81.138:1196/")
          reactionMessage.edit(xpEmbed);
           break;
 
