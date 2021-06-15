@@ -12,7 +12,7 @@
 
 # Requis : 
 - Node.JS
-- Un token Discord : https://discordapp.com/developers/applications/ID-de-votre-bot/bots (a replacer dans le fichier `config.js` avec DISCORDTOKEN)
+- Un token Discord : https://discordapp.com/developers/applications/ID-de-votre-bot/bots (a replacer dans le fichier `config.js` dans le champ TOKEN)
 - Les modules déjà pré-installés dans le fichier `package.json`. (Pour le module `bookman`, faites attention à ce que sa version soit sur 3.1.0 et pas ultérieur sinon le bot n'arrivera pas à démmarer.)
 - Une base de données MongoDB : ![Tutoriel Ici](https://github.com/SonMaxime/HorizonBot/wiki/Base-de-donn%C3%A9es-Mongo.)
 - Une clé d'accès YouTube API
