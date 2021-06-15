@@ -1,6 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const { readdirSync } = require("fs");
-const categoryList = readdirSync('./commands');
 
 module.exports.run = async (client, message, args, settings) => {
   if (!args.length) {
