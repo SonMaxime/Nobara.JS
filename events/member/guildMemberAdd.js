@@ -1,21 +1,20 @@
 const { MessageEmbed } = require("discord.js");
+const Welcome = require('./../../models/welcome');
 
-module.exports = async (client, member, settings) => {
-  let data =  await Guild.findOne({
-    guildID: member.guild.id
+module.exports = async (client, member, guild) => {
+  Welcome.findOne({ guildID: member.guild.id }, async (err, data) => {
+    if (!data) return;
+
+    const user = member.user;
+    const channel = member.guild.channels.cache.get(data.channelID);
+
+    channel.send(`Welcome ${user}!`)
   });
-  let channel = member.guild.channels.cache.find(ch => ch.name == data.welcomeChannel);
-  if(channel) return;
-  
-  const embed = new MessageEmbed()
-  .setColor('BLACK')
-  .setDescription(`Welcome ${user}`)
-  channel.send(embed);
 
   await client.createUser({
     guildID: member.guild.id,
     guildName: member.guild.name,
     userID: member.id,
-    username: member.user.tag,
+    username: member.user.tag
   });
 }

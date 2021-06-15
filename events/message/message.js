@@ -22,6 +22,10 @@ module.exports = async (client, message, messageReaction) => {
     message.guild.language = require(`./../locales/${language}.json`);
  }
 
+ if(message.content ===`<@!${message.client.user.id}>` || message.content ===`<@${message.client.user.id}>`){
+  return message.reply(`Uh-Oh! You forgot the prefix? It's \`${prefix}\``);;
+ }
+
   const expCd = Math.floor(Math.random() * 19) + 1;
   const expToAdd = Math.floor(Math.random() * 25) + 10;
 

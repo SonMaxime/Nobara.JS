@@ -1,7 +1,6 @@
 const { Client, Collection } = require('discord.js');
 const { loadCommands, loadEvents } = require("./util/loader");
 const { Database } = require("bookman");
-
 const client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });;
 
 require("./util/functions")(client);
