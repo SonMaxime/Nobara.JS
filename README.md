@@ -17,9 +17,6 @@
 - Une base de données MongoDB : ![Tutoriel Ici](https://github.com/SonMaxime/HorizonBot/wiki/Base-de-donn%C3%A9es-Mongo.)
 - Une clé d'accès YouTube API
 
-# Utilisation :
-Comment fonctionne Horizon ? C'est simple comme bonjour ! 
-Utilisez la commande .help pour vous y retrouver,vous pouvez même avoir des informations supplémentaires sur une commande en question. Ex. : .help meme 
 
 Music module inspired by ![EvoBot](https://github.com/eritislami)
 
