@@ -20,15 +20,18 @@
 
 Music module inspired by ![EvoBot](https://github.com/eritislami)
 
+## Author
+Nobara.JS © SonMaxime  
+Authored and maintained by SonMaxime  
+
+> GitHub [**@SonMaxime**][my github]  
+> Twitter [**@SonMaxime_**][my twitter]  
+> Discord **const dev = require('SonMaxime')#9355**  
+
 # Avec quoi est conçu ce bot ? 
 Ce bot est conçu avec L'API de Discord, random-puppy pour la récupération des memes via Reddit et celle de YouTube pour la partie musicale.
 
 # Invitation :
 
-Lien d'invitation du bot : https://discordapp.com/oauth2/authorize?client_id=765641198404501524&scope=bot&permissions=8
-Lien du dashboard : BIENTÔT EN LIGNE
-
-# Contact :
-En cas de problème que ce soit avec le bot ou le code source merci de me le faire savoir via ces moyens de communication ci dessous :
-
-- Discord : const dev = require('SonMaxime')#9355
+- Lien d'invitation du bot : https://discordapp.com/oauth2/authorize?client_id=765641198404501524&scope=bot&permissions=8
+- Lien du dashboard : BIENTÔT EN LIGNE
