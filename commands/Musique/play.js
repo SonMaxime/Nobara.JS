@@ -166,5 +166,6 @@ module.exports.help = {
   usage: '<YouTube URL | Nom de la video | Soundcloud URL>',
   isUserAdmin: false,
   permissions: false,
-  args: true
+  args: true,
+  inDev: false
 }

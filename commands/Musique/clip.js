@@ -37,13 +37,14 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "clip",
-    aliases: ['clip'],
-    category: 'musique',
-    description: "🇫🇷 Joue un meme dans un salon vocal. \n🇬🇧 Play a meme in a vocal channel.",
-    cooldown: 3,
-    usage: '<name of the meme>',
-    isUserAdmin: false,
-    permissions: false,
-    args: false
+  name: "clip",
+  aliases: ['clip'],
+  category: 'musique',
+  description: "🇫🇷 Joue un meme dans un salon vocal. \n🇬🇧 Play a meme in a vocal channel.",
+  cooldown: 3,
+  usage: '<name of the meme>',
+  isUserAdmin: false,
+  permissions: false,
+  args: false,
+  inDev: false
 }

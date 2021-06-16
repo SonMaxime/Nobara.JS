@@ -41,5 +41,6 @@ module.exports.help = {
   usage: '<@user> <time>',
   isUserAdmin: true,
   permissions: true,
-  args: true
+  args: true,
+  inDev: false
 }

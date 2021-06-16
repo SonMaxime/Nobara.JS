@@ -148,5 +148,6 @@ module.exports.help = {
   usage: '<YouTube Playlist URL | Playlist Name>',
   isUserAdmin: false,
   permissions: false,
-  args: true
+  args: true,
+  inDev: false
 }

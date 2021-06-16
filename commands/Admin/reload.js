@@ -12,5 +12,6 @@ module.exports.help = {
   cooldown: 0,
   isUserAdmin: true,
   permissions: false,
-  args: false
+  args: false,
+  inDev: false
 }

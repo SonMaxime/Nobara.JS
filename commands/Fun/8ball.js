@@ -22,5 +22,6 @@ module.exports.help = {
     usage: "<question>",
     isUserAdmin: false,
     permissions: false,
-    args: true
+    args: true,
+    inDev: false
 }

@@ -19,6 +19,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
     "bookman": "^3.1.0",
+    "discord-tts-fr": "^1.0.3",
     "discord.js": "^12.5.3",
     "ejs": "^3.1.6",
     "erit-ytdl": "^0.1.3",

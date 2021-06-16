@@ -15,5 +15,6 @@ module.exports.help = {
   usage: '<user> <amount_of_experience>',
   isUserAdmin: false,
   permissions: true,
-  args: true
+  args: true,
+  inDev: false
 }

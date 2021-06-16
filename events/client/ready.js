@@ -5,9 +5,7 @@ module.exports = async (client, message) => {
 
   let status = [
     {name: '.help', type: 'PLAYING'},
-    {name: 'Twit: SonMaximeAPX', type: 'WATCHING'},
-    {name: "pfp by @ikadakat", type: "PLAYING"},
-    {name: "Apex Games", type: "COMPETING"}
+    {name: 'Twit: SonMaxime_', type: 'WATCHING'}
   ]
   function setStatus(){
     let randomStatus = status[Math.floor(Math.random()*status.length)]

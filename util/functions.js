@@ -31,15 +31,25 @@ module.exports = async (client, message) => {
   };
 
   client.getUser = async user => {
-    const data = await User.findOne({ userID: user.id });
-    if (data) return data;
-    else return;
+    try {
+      const data = await User.findOne({ userID: user.id });
+      if (data) return data;
+      else return;
+    }
+    catch (e) {
+      console.log(e);
+    }
   };
 
   client.getUsers = async guild => {
-    const data = await User.find({ guildID: guild.id });
-    if (data) return data;
-    else return;
+    try {
+      const data = await User.find({ guildID: guild.id });
+      if (data) return data;
+      else return;
+    }
+    catch (e) {
+      console.log(e);
+    }
   };
 
   client.updateUser = async (user, settings) => {

@@ -101,5 +101,6 @@ module.exports.help = {
   usage: '',
   isUserAdmin: false,
   permissions: false,
-  args: false
+  args: false,
+  inDev: false
 }

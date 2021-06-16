@@ -26,5 +26,6 @@ module.exports.help = {
     usage: '.lang fr/en',
     isUserAdmin: false,
     permissions: true,
-    args: false
+    args: false,
+    inDev: false
 }

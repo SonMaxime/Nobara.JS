@@ -19,10 +19,11 @@ module.exports.help = {
     name: "meme",
     aliases: ['meme'],
     category: 'reedit',
-    description: "Envoie un meme depuis les subReedits me_irl, dankmeme et meme.",
+    description: "🇫🇷 Envoie un meme depuis les subReedits me_irl, dankmeme et meme. \n🇬🇧 Send a meme from the me_irl, dankmeme et meme subReedits.",
     cooldown: 10,
     usage: '',
     isUserAdmin: false,
     permissions: false,
     args: false,
+    inDev: false
 }

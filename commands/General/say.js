@@ -12,5 +12,6 @@ module.exports.help = {
   usage: '<votre_message>',
   isUserAdmin: false,
   permissions: true,
-  args: true
+  args: true,
+  inDev: false
 }

@@ -13,7 +13,6 @@ module.exports.run = async (client, message, args, settings) => {
       {name: ":tools: `Moderation` : ", value: `${message.guild.language.modDescription}`},
       {name: ":musical_note: `Music` : ", value: `${message.guild.language.musicDescription}`},
       {name: ":newspaper: `Reedit` : ", value: `${message.guild.language.reeditDescription}`},
-      {name: ":chart_with_upwards_trend: `Stats` : ", value: `${message.guild.language.statsDescription}`},
       {name: ":crossed_swords: `XP` : ", value: `${message.guild.language.xpDescription}`}
     )
     var reactionMessage = await message.channel.send(menuEmbed)
@@ -62,12 +61,14 @@ module.exports.run = async (client, message, args, settings) => {
           reaction.users.remove(user).catch(console.error);
           const ballcommand = client.commands.get("8ball");
           const rpscommand = client.commands.get("rps");
+          const fakesaycommand = client.commands.get("fakesay");
           const funEmbed = new MessageEmbed()
           .setTitle('Fun Help')
           .setDescription(message.guild.language.listOfCommandsDescription)
           .addFields(
             {name: "`8ball` :", value: `${ballcommand.help.description}`},
-            {name: "`rps` : ", value: `${rpscommand.help.description}`}
+            {name: "`rps` : ", value: `${rpscommand.help.description}`},
+            {name: "`fakesay` : ", value: `${fakesaycommand.help.description}`}
           )
          reactionMessage.edit(funEmbed);
           break;
@@ -101,7 +102,6 @@ module.exports.run = async (client, message, args, settings) => {
           const purgecommand = client.commands.get("purge");
           const unbancommand = client.commands.get("unban");
           const unmutecommand = client.commands.get("unmute");
-          const votekickcommand = client.commands.get("votekick");
           const modEmbed = new MessageEmbed()
           .setTitle('Moderation Help')
           .setDescription(message.guild.language.listOfCommandsDescription)
@@ -113,7 +113,6 @@ module.exports.run = async (client, message, args, settings) => {
             {name: "`purge` : ", value: `${purgecommand.help.description}`},
             {name: "`unban` : ", value: `${unbancommand.help.description}`},
             {name: "`unmute` : ", value: `${unmutecommand.help.description}`},
-            {name: "`votekick` : ", value: `${votekickcommand.help.description}`}
           )
          reactionMessage.edit(modEmbed);
           break;
@@ -150,12 +149,7 @@ module.exports.run = async (client, message, args, settings) => {
          reactionMessage.edit(reeditEmbed);
           break;
 
-        case "🏠":
-          reaction.users.remove(user).catch(console.error);
-          reactionMessage.edit(menuEmbed);
-          break;
-
-        case "🏠":
+        case "⚔️":
           reaction.users.remove(user).catch(console.error);
           const addxpcommand = client.commands.get("addxp")
           const expcommand = client.commands.get("exp")
@@ -163,7 +157,7 @@ module.exports.run = async (client, message, args, settings) => {
           const levelcommand = client.commands.get("level")
           const removexpcommand = client.commands.get("removexp")
           const xpEmbed = new MessageEmbed()
-          .setTitle('Admin Help')
+          .setTitle('XP Help')
           .setDescription(message.guild.language.listOfCommandsDescription)
           .addFields(
             {name: "`addxp` :", value: `${addxpcommand.help.description}`},
@@ -173,6 +167,11 @@ module.exports.run = async (client, message, args, settings) => {
             {name: "`removexp` : ", value: `${removexpcommand.help.description}`}
           )
          reactionMessage.edit(xpEmbed);
+          break;
+
+        case "🏠":
+          reaction.users.remove(user).catch(console.error);
+          reactionMessage.edit(menuEmbed);
           break;
 
         case "⏹":
@@ -240,5 +239,6 @@ module.exports.help = {
   usage: '<command_name>',
   isUserAdmin: false,
   permissions: false,
-  args: false
+  args: false,
+  inDev: false
 }

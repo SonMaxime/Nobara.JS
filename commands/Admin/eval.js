@@ -21,5 +21,6 @@ module.exports.help = {
   usage: '<code_to_test>',
   isUserAdmin: false,
   permissions: true,
-  args: true
+  args: true,
+  inDev: false
 }

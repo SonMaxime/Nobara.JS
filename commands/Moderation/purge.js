@@ -21,5 +21,6 @@ module.exports.help = {
   usage: '<nbr_messages> (100 limit + only messages from 14 days ago.)',
   isUserAdmin: false,
   permissions: true,
-  args: true
+  args: true,
+  inDev: false
 }

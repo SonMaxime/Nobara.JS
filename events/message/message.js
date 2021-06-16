@@ -1,4 +1,5 @@
 const { Collection } = require('discord.js');
+const { devs } = "492402867953467392"
 
 module.exports = async (client, message, messageReaction) => {
   const settings = await client.getGuild(message.guild);
@@ -22,7 +23,7 @@ module.exports = async (client, message, messageReaction) => {
     message.guild.language = require(`./../locales/${language}.json`);
  }
 
- if(message.content ===`<@!${message.client.user.id}>` || message.content ===`<@${message.client.user.id}>`){
+  if(message.content ===`<@!${message.client.user.id}>` || message.content ===`<@${message.client.user.id}>`){
   return message.reply(`Uh-Oh! You forgot the prefix? It's \`${prefix}\``);;
  }
 
