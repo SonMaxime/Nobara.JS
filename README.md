@@ -24,8 +24,8 @@ Music module inspired by ![EvoBot](https://github.com/eritislami)
 Nobara.JS © SonMaxime  
 Authored and maintained by SonMaxime  
 
-> GitHub [**@SonMaxime**]
-> Twitter [**@SonMaxime_**]
+> GitHub [**@SonMaxime**], 
+> Twitter [**@SonMaxime_**], 
 > Discord **const dev = require('SonMaxime')#9355**  
 
 # Avec quoi est conçu ce bot ? 
