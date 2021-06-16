@@ -10,6 +10,10 @@
 [![Dependencies](https://img.shields.io/david/expressjs/express.svg)](https://github.com/SonMaxime/Nobara.JS/blob/main/package.json)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
+## Supported Languages
+-   French (Default)
+-   English
+
 ## Requirements
 - Node.JS v14 =<
 - Discord token : https://discordapp.com/developers/applications/ID-de-votre-bot/bots (a replacer dans le fichier `config.js` dans le champ TOKEN)
