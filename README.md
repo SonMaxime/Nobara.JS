@@ -16,7 +16,7 @@
 - Les modules déjà pré-installés dans le fichier `package.json`. (Pour le module `bookman`, faites attention à ce que sa version soit sur 3.1.0 et pas ultérieur sinon le bot n'arrivera pas à démmarer.)
 - MongoDB Database: ![French Tutorial here](https://github.com/SonMaxime/HorizonBot/wiki/Base-de-donn%C3%A9es-Mongo.)
 - YouTube API acess key
-- Soundcloud API key : ![English Tutorial here](https://github.com/zackradisic/node-soundcloud-downloader/blob/master/README.md#client-id)
+- Soundcloud Client ID : ![English Tutorial here](https://github.com/zackradisic/node-soundcloud-downloader/blob/master/README.md#client-id)
 
 
 Music module inspired by ![EvoBot](https://github.com/eritislami)
