@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-module.exports.run = async (client, message, args, settings) => {
+module.exports.run = async (client, message, args) => {
     let lang = args[0];
 
     if (!lang) return await message.channel.send(message.guild.language.specify_language);

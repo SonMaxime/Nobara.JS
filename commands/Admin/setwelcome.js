@@ -2,12 +2,8 @@ const { MessageEmbed } = require("discord.js");
 const Schema = require('../../models/welcome');
 
 module.exports.run = (client, message, args) => {
-    if (!message.member.hasPermission("ADMINISTRATOR")) {
-        return message.reply("Vous ne pouvez pas utiliser cette commande.")
-    }
-
     const channel = message.mentions.channels.first();
-    if (!channel) return message.reply("Veuillez spécifier le salon que vous voulez utiliser comme salon de bienvenue.");
+    if (!channel) return message.reply(message.guild.language.welcomeChannelError);
 
     Schema.findOne({ guildID: message.guild.id }, async (err, data) => {
         if (data) {

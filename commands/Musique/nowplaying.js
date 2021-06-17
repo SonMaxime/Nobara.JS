@@ -44,6 +44,5 @@ module.exports.help = {
   usage: '',
   isUserAdmin: false,
   permissions: false,
-  args: false,
-  inDev: false
+  args: false
 }

@@ -1,8 +1,8 @@
 {
-    "prefix": "Préfix updated ",
+    "prefix": "Prefix updated ",
     "prefixActual": "Actual prefix",
     "welcomeChannel": "Welcome channel updated: ",
-    "welcomeChannelActual": "Actual welcome channel ",
+    "welcomeChannelError": "Please specify the channel you want to use as the welcome channel.",
     "restartBot": "Reload.",
     "haveRemoved": "You have removed",
     "listOfCommands": "List of commands",

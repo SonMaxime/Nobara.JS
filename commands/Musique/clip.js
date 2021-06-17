@@ -45,6 +45,5 @@ module.exports.help = {
   usage: '<name of the meme>',
   isUserAdmin: false,
   permissions: false,
-  args: false,
-  inDev: false
+  args: false
 }

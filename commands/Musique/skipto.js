@@ -50,6 +50,5 @@ module.exports.help = {
   usage: '<Queue Number>',
   isUserAdmin: false,
   permissions: false,
-  args: true,
-  inDev: false
+  args: true
 }

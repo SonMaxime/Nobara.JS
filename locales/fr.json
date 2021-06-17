@@ -1,6 +1,7 @@
 {
 	"prefix": "Préfix mis à jour",
 	"prefixActual": "Préfix actuel",
+	"welcomeChannelError": "Veuillez spécifier le salon que vous voulez utiliser comme salon de bienvenue.",
 	"welcomeChannel": "Votre salon de bienvenue a été réglé sur:",
 	"restartBot": "Redémarrage en cours.",
 	"haveRemoved": "Vous avez enlevé avec succès",
@@ -86,5 +87,5 @@
 	"modDescription": "Liste des commandes destinées aux modérateurs.",
 	"musicDescription": "Liste de toutes les commandes musicales.",
 	"reeditDescription": "Liste des commandes meme.",
-	"xpDescription": "Liste de toutes les commandes xp."
+	"xpDescription": "Liste de toutes les commandes xp"
 }
