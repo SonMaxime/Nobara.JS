@@ -10,9 +10,6 @@ module.exports = {
   SOUNDCLOUD_CLIENT_ID: "Client ID for Souncloud",
   DBCONNECTION: "database on MongoDb",
   DEFAULTSETTINGS: {
-    prefix: ".",
-    logChannel: "reports",
-    welcomeMessage: "Bienvenue ! {{user}}",
-    welcomeChannel: "bienvenue"
+    prefix: "."
   }
 }

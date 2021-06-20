@@ -37,7 +37,7 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
   name: "rps",
-  aliases: [''],
+  aliases: ['rps'],
   category: 'fun',
   description: "🇫🇷 Piere, feuille, ciseaux ! \n🇬🇧 Rock, paper, Scisors !",
   cooldown: 10,
