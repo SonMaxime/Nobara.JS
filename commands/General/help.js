@@ -13,7 +13,8 @@ module.exports.run = async (client, message, args, settings) => {
       {name: ":tools: `Moderation` : ", value: `${message.guild.language.modDescription}`},
       {name: ":musical_note: `Music` : ", value: `${message.guild.language.musicDescription}`},
       {name: ":newspaper: `Reedit` : ", value: `${message.guild.language.reeditDescription}`},
-      {name: ":crossed_swords: `XP` : ", value: `${message.guild.language.xpDescription}`}
+      {name: ":crossed_swords: `XP` : ", value: `${message.guild.language.xpDescription}`},
+      {name: ":money_with_wings: `Economy` : ", value: `${message.guild.language.economyDescription}`}
     )
     var reactionMessage = await message.channel.send(menuEmbed)
     await reactionMessage.react("⚙️");
@@ -23,6 +24,7 @@ module.exports.run = async (client, message, args, settings) => {
     await reactionMessage.react("🎵");
     await reactionMessage.react("📰");
     await reactionMessage.react("⚔️");
+    await reactionMessage.react("💸");
     await reactionMessage.react("🏠");
     await reactionMessage.react("⏹");
 
@@ -167,6 +169,26 @@ module.exports.run = async (client, message, args, settings) => {
             {name: "`removexp` : ", value: `${removexpcommand.help.description}`}
           )
          reactionMessage.edit(xpEmbed);
+          break;
+
+        case "💸":
+          reaction.users.remove(user).catch(console.error);
+          const balancecommand = client.commands.get("balance");
+          const begcommand = client.commands.get("beg");
+          const depositecommand = client.commands.get("deposite");
+          const givecommand = client.commands.get("give");
+          const withdrawcommand = client.commands.get("withdraw");
+          const ecoembed = new MessageEmbed()
+          .setTitle('Economy Help')
+          .setDescription(message.guild.language.listOfCommandsDescription)
+          .addFields(
+            {name: "`balance` :", value: `${balancecommand.help.description}`},
+            {name: "`beg` : ", value: `${begcommand.help.description}`},
+            {name: "`deposite` : ", value: `${depositecommand.help.description}`},
+            {name: "`give` : ", value: `${givecommand.help.description}`},
+            {name: "`withdraw` : ", value: `${withdrawcommand.help.description}`}
+          )
+          reactionMessage.edit(ecoembed);
           break;
 
         case "🏠":
