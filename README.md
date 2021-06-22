@@ -1,4 +1,7 @@
-![node-soundcloud-downloader](https://socialify.git.ci/SonMaxime/Nobara.JS/image?description=1&font=Raleway&forks=1&issues=1&language=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark)
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 10px 0;" alt="Nobara" src="https://i.imgur.com/gLW9HMt.jpg">
+
+
+# Nobara
 
 <p>
   <a href="https://twitter.com/SonMaxime_" target="_blank">
