@@ -1,6 +1,6 @@
 const { Collection } = require('discord.js');
 
-module.exports = async (client, message, messageReaction) => {
+module.exports = async (client, message) => {
   const settings = await client.getGuild(message.guild);
   const dbUser = await client.getUser(message.member);
 
@@ -34,10 +34,21 @@ module.exports = async (client, message, messageReaction) => {
   };
 
   const userLevel = Math.floor(0.04 * Math.sqrt(dbUser.experience));
+  const profileModel = require('./../../models/economy');
 
   if (dbUser.level < userLevel) {
     message.reply(`bravo à toi, tu viens de monter niveau **${userLevel}** ! Incroyable!`);
     client.updateUser(message.member, { level: userLevel });
+    await profileModel.findOneAndUpdate(
+      {
+          userID: message.author.id
+      },
+      {
+          $inc: {
+              coins: 100
+          },
+      }
+    )
   };
 
   const economyModel = require('./../../models/economy');

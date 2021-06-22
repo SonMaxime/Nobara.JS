@@ -17,6 +17,10 @@ const economySchema = new mongoose.Schema({
     bank: {
         type: Number
     },
+    daily: {
+        type: Number,
+        default: new Date() - 86400000
+    },
 })
 
 const model = mongoose.model("eco", economySchema)

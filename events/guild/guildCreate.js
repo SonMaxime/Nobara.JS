@@ -1,4 +1,4 @@
-module.exports = async (client, guild, settings) => {
+module.exports = async (client, guild) => {
   const db = client.db;
   const newGuild = {
     guildID: guild.id,
