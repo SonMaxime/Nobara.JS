@@ -103,5 +103,6 @@
 	"modDescription": "Liste des commandes destinées aux modérateurs.",
 	"musicDescription": "Liste de toutes les commandes musicales.",
 	"reeditDescription": "Liste des commandes meme.",
-	"xpDescription": "Liste de toutes les commandes xp"
+	"xpDescription": "Liste de toutes les commandes xp",
+	"economyDescription": "Liste de toutes les commandes d'économie."
 }

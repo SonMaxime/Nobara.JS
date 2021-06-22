@@ -101,5 +101,6 @@
 	"modDescription": "List of all commands available for moderators.",
 	"musicDescription": "List of all music commands.",
 	"reeditDescription": "List of all memes commands.",
-    "xpDescription": "List of all expreience commands."
+    "xpDescription": "List of all expreience commands.",
+    "economyDescription": "List of all economy commands."
 }
