@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message) => {
   const embed = new MessageEmbed()
     .setColor('#B4E0E0')
     .setAuthor(`${client.user.username} Info`, client.user.avatarURL())

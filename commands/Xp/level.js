@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 
-module.exports.run = (client, message, args, settings, dbUser) => {
+module.exports.run = (client, message, dbUser) => {
   const embed = new MessageEmbed()
   .setTitle(`Level of ${message.author.username}`)
   .setColor("#dc143c")

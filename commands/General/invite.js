@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message) => {
      const embed = new MessageEmbed()
      .setColor('BLACK')
      .setDescription(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)

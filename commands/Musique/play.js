@@ -6,7 +6,7 @@ const https = require("https");
 const { SOUNDCLOUD_CLIENT_ID, DEFAULT_VOLUME } = require("./../../util/util");
 const youtube = new YouTubeAPI("AIzaSyAhPLtjqee-H0lINdBEP5a_2rO6UuRtICM");
 
-module.exports.run = async (client, message, args, settings) => {
+module.exports.run = async (client, message, args) => {
   message.delete();
   const { channel } = message.member.voice;
 

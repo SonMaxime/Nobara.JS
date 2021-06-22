@@ -5,7 +5,7 @@ const scdl = require("soundcloud-downloader").default;
 const { YOUTUBE_API_KEY, SOUNDCLOUD_CLIENT_ID, MAX_PLAYLIST_SIZE, DEFAULT_VOLUME } = require("./../../util/util");
 const youtube = new YouTubeAPI("AIzaSyAhPLtjqee-H0lINdBEP5a_2rO6UuRtICM");
 
-module.exports.run = async (client, message, args, settings) => {
+module.exports.run = async (client, message, args) => {
   const { channel } = message.member.voice;
   const serverQueue = message.client.queue.get(message.guild.id);
 

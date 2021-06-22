@@ -1,7 +1,7 @@
 const createBar = require("string-progressbar");
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = (client, message, args, settings) => {
+module.exports.run = (client, message) => {
     message.delete();
     const queue = message.client.queue.get(message.guild.id);
     if (!queue) return;

@@ -1,4 +1,4 @@
-module.exports.run = (client, message, args) => {
+module.exports.run = (message, args) => {
   message.delete();
   message.channel.send(args.join(" "));
 };

@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = async (client, message, args, settings, dbUser) => {
+module.exports.run = async (client, message, dbUser) => {
   const user = message.guild.member(message.mentions.users.first());
 
   const userEmbed = new MessageEmbed()
