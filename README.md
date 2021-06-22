@@ -9,7 +9,7 @@
   </a>
 </p>
 
-[![Language](https://img.shields.io/badge/Language-Node.js-red?style=for-the-badge&logo=node.js)][nodejs]
+[![Language](https://img.shields.io/badge/Language-Node.js-red?style=for-the-badge&logo=node.js)[nodejs]
 [![Build With](https://img.shields.io/npm/v/discord.js.svg?maxAge=3600)](https://www.npmjs.com/package/discord.js)
 [![Dependencies](https://img.shields.io/david/expressjs/express.svg)](https://github.com/SonMaxime/Nobara.JS/blob/main/package.json)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
