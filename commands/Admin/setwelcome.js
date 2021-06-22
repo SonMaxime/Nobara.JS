@@ -12,7 +12,7 @@ module.exports.run = (client, message, args) => {
         } else {
             new Schema({
                 guildID: message.guild.id,
-                channelID: channel.id,
+                channelID: channel.id
             }).save();
         }
         message.reply(message.guild.language.welcomeChannel + ` ${channel}.`)

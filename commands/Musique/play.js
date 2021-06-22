@@ -1,4 +1,4 @@
-const { play } = require("./../../include/play");
+const { play } = require('../../util/play');
 const ytdl = require("ytdl-core");
 const YouTubeAPI = require("simple-youtube-api");
 const scdl = require("soundcloud-downloader").default;

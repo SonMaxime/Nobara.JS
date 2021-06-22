@@ -9,6 +9,7 @@ const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const Discord = require("discord.js");
 const GuildSettings = require("../models/guild");
+const WelcomeSettings = require('../models/welcome');
 
 const app = express();
 
@@ -141,12 +142,20 @@ module.exports = async (client, message) => {
           await client.createGuild(newGuild);
           storedSettings = await GuildSettings.findOne({ guildID: guild.id });
         }
+
+        var welcomeStoredSettings = await WelcomeSettings.findOne({ guildID: guild.id })
+        if (!welcomeStoredSettings) {
+          const newWelcome = {
+            guildID: String,
+            channelID: String
+          };
+          
+          await client.createWelcome(newWelcome);
+          welcomeStoredSettings = await WelcomeSettings.findOne({ guildID: guild.id });
+        }
       
         storedSettings.prefix = req.body.prefix;
-        storedSettings.logChannel = req.body.logChannel;
-        storedSettings.welcomeMessage = req.body.welcomeMessage;
-        storedSettings.welcomeChannel = req.body.welcomeChannel;
-        storedSettings.leaveMessage = req.body.leaveMessage;
+        welcomeStoredSettings.channelID = req.body.welcomeChannel;
         await storedSettings.save().catch(() => {});
 
         renderTemplate(res, req, "settings.ejs", { guild, settings: storedSettings, alert: "Vos paramettres ont été enregistré." });

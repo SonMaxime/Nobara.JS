@@ -3,12 +3,14 @@ const Welcome = require('./../../models/welcome');
 
 module.exports = async (client, member, guild) => {
   Welcome.findOne({ guildID: member.guild.id }, async (err, data) => {
-    if (!data) return;
+    if (!data) {
+      return;
+    } else {
+      const user = member.user;
+      const channel = member.guild.channels.cache.get(data.channelID);
 
-    const user = member.user;
-    const channel = member.guild.channels.cache.get(data.channelID);
-
-    channel.send(`Welcome ${user}!`)
+      channel.send(`Welcome ${user} !`)
+    }
   });
 
   await client.createUser({

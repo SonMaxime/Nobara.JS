@@ -1,5 +1,4 @@
 const { Collection } = require('discord.js');
-const { devs } = "492402867953467392"
 
 module.exports = async (client, message, messageReaction) => {
   const settings = await client.getGuild(message.guild);
@@ -40,6 +39,24 @@ module.exports = async (client, message, messageReaction) => {
     message.reply(`bravo à toi, tu viens de monter niveau **${userLevel}** ! Incroyable!`);
     client.updateUser(message.member, { level: userLevel });
   };
+
+  const economyModel = require('./../../models/economy');
+
+  let economyData;
+  try {
+    economyData = await economyModel.findOne({ userID: message.author.id })
+    if (!economyData) {
+      let profile = await economyModel.create({
+        userID: message.author.id,
+        guildID: message.guild.id,
+        coins: 1000,
+        bank: 0
+      })
+      profile.save();
+    }
+  } catch (err) {
+    console.log(err);
+  }
 
   if (!message.content.startsWith(settings.prefix)) return;
   
@@ -84,5 +101,5 @@ module.exports = async (client, message, messageReaction) => {
   tStamps.set(message.author.id, timeNow);
   setTimeout(() => tStamps.delete(message.author.id), cdAmount);
 
-  command.run(client, message, args, settings, dbUser);
+  command.run(client, message, args, settings, dbUser, economyData);
 }
