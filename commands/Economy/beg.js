@@ -1,7 +1,7 @@
 const profileModel = require('./../../models/economy');
 
-module.exports.run = async (message) => {
-  const randomNumber = Math.floor(Math.random() * 500) + 1;
+module.exports.run = async (client, message, args, economyData) => {
+  const randomNumber = Math.floor(Math.random() * 700) + 1;
 
   try {
     await profileModel.findOneAndUpdate(
@@ -25,7 +25,7 @@ module.exports.help = {
   name: "beg",
   aliases: ['bg'],
   description: "🇫🇷 Réclamez des pièces. \n🇬🇧 Beg for coins.",
-  cooldown: 10,
+  cooldown: 86400,
   usage: '',
   isUserAdmin: false,
   permissions: false,
