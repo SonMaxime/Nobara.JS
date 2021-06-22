@@ -1,6 +1,6 @@
 const profileModel = require('./../../models/economy');
 
-module.exports.run = async (client, message, args, economyData) => {
+module.exports.run = async (message, args, economyData) => {
     const amount = args[0];
 
     if (amount % 1 != 0 || amount <= 0) {
@@ -35,7 +35,7 @@ module.exports.run = async (client, message, args, economyData) => {
 module.exports.help = {
   name: "withdraw",
   aliases: ['w'],
-  description: "Withdraw coins from ur bank.",
+  description: "🇫🇷 Retirez des pièces de votre banque. \n🇬🇧 Withdraw coins from ur bank.",
   cooldown: 10,
   usage: '<amount>',
   isUserAdmin: false,

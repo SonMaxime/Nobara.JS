@@ -1,6 +1,6 @@
 const economyModel = require('./../../models/economy');
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (message) => {
   const economyData = await economyModel.findOne({ userID: message.author.id });
 
   message.channel.send(`${message.guild.language.coinsCount}` + `${economyData.coins}, ` + `${message.guild.language.bankCount}` + `${economyData.bank}.`)
@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
 module.exports.help = {
   name: "balance",
   aliases: ['b'],
-  description: "Display ur balance.",
+  description: "🇫🇷 Affiche votre balance \n🇬🇧 Display ur balance.",
   cooldown: 10,
   usage: '',
   isUserAdmin: false,

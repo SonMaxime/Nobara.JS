@@ -1,6 +1,6 @@
 const profileModel = require('./../../models/economy');
 
-module.exports.run = async (client, message, args, economyData) => {
+module.exports.run = async (message, args) => {
     if (!args.length) return message.channel.send(message.guild.language.mentionPlayer);
 
     const amount = args[0];
@@ -40,7 +40,7 @@ module.exports.run = async (client, message, args, economyData) => {
 module.exports.help = {
   name: "give",
   aliases: ['g'],
-  description: "Give a player some coins.",
+  description: "🇫🇷 Donnez des pièces à un joueur. \n🇬🇧 Give a player some coins.",
   cooldown: 10,
   usage: '<target> <amount>',
   isUserAdmin: false,

@@ -1,6 +1,6 @@
 const profileModel = require('./../../models/economy');
 
-module.exports.run = async (client, message, args, economyData) => {
+module.exports.run = async (message) => {
   const randomNumber = Math.floor(Math.random() * 500) + 1;
 
   try {
@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args, economyData) => {
 module.exports.help = {
   name: "beg",
   aliases: ['bg'],
-  description: "Beg for coins.",
+  description: "🇫🇷 Réclamez des pièces. \n🇬🇧 Beg for coins.",
   cooldown: 10,
   usage: '',
   isUserAdmin: false,

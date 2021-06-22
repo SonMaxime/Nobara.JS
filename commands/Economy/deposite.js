@@ -1,6 +1,6 @@
 const profileModel = require('./../../models/economy');
 
-module.exports.run = async (client, message, args, economyData) => {
+module.exports.run = async (message, args, economyData) => {
   const amount = args[0];
   if (amount % 1 != 0 || amount <= 0) return message.reply(`${message.guild.language.depositNumber}`)
   try {
@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args, economyData) => {
 module.exports.help = {
   name: "deposite",
   aliases: ['d'],
-  description: "Deposite coins in ur bank.",
+  description: "🇫🇷 Déposez des pièces dans votre banque. \n🇬🇧 Deposite coins in ur bank.",
   cooldown: 10,
   usage: '<amount>',
   isUserAdmin: false,
