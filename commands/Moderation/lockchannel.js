@@ -1,4 +1,4 @@
-module.exports.run = (client, message) => {
+module.exports.run = (client, message, args, settings, dbUser, economyData) => {
     message.delete();
     if (!client.lockit) client.lockit = [];
     message.channel.updateOverwrite(message.guild.roles.everyone, {

@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const { promptMessage } = require("../../util/resfunctions.js")
 const chooseArr = ["🗻", "📰", "✂"];
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const embed = new MessageEmbed()
   .setColor("#ffffff")
   .setFooter(message.guild.me.displayName, client.user.displayAvatarURL)

@@ -1,4 +1,4 @@
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   const user = message.guild.member(message.mentions.users.first());
   const expToRemove = parseInt(args[1]);
   if (isNaN(expToRemove)) return message.reply("faut entrer un nombre.");

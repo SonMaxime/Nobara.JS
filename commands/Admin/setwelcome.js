@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const Schema = require('../../models/welcome');
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, settings, dbUser, economyData) => {
     const channel = message.mentions.channels.first();
     if (!channel) return message.reply(message.guild.language.welcomeChannelError);
 

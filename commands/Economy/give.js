@@ -1,6 +1,6 @@
 const profileModel = require('./../../models/economy');
 
-module.exports.run = async (client, message, args, economyDatas) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
     if (!args.length) return message.channel.send(message.guild.language.mentionPlayer);
 
     const amount = args[0];

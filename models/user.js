@@ -15,13 +15,6 @@ const userSchema = mongoose.Schema({
     "type": Number,
     "default": 0
   },
-  coins: {
-    "type": Number,
-    "default": 1000
-  },
-  bank: {
-    "type": Number
-  },
   registeredAt: { 
     type: Number, 
     default: Date.now()

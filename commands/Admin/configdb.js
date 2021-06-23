@@ -1,4 +1,4 @@
-module.exports.run = async (client, message, args, settings) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const getSetting = args[0];
   const newSetting = args.slice(1).join(" ");
 

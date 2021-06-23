@@ -1,7 +1,7 @@
 const profileModel = require('./../../models/economy');
 const { MessageEmbed } = require('discord.js');
 
-module.exports.run = async (client, message) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const storeembed = new MessageEmbed()
   .setTitle('Shop')
   .setDescription(message.guild.language.shopDescription)

@@ -1,7 +1,7 @@
 const profileModel = require('./../../models/economy');
 const { MessageEmbed } = require('discord.js');
 
-module.exports.run = async (client, message, args, economyData) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const item = args[0];
 
   if (item === 'cookie') {

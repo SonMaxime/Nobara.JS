@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   message.delete();
 
   const cible = message.mentions.users.first() || message.guild.users.cache.get(args[0]);

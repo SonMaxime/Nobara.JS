@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = async (client, message, args, settings) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   if (!args.length) {
     const menuEmbed = new MessageEmbed()
     .setColor("#36393F")

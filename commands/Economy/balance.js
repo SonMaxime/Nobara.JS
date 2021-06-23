@@ -1,6 +1,6 @@
 const economyModel = require('./../../models/economy');
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const economyData = await economyModel.findOne({ userID: message.author.id });
 
   message.channel.send(`${message.guild.language.coinsCount}` + `${economyData.coins}, ` + `${message.guild.language.bankCount}` + `${economyData.bank}.`)

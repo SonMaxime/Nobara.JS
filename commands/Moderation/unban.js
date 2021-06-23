@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = async (client, message, argss) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   let user = await client.users.fetch(args[0]);
   if (!user) return message.reply(message.guild.language.userNoExist);
   message.guild.members.unban(user);

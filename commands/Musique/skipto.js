@@ -1,6 +1,6 @@
 const { canModifyQueue } = require("./../../util/util");
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, settings, dbUser, economyData) => {
     message.delete();
     if (!args.length || isNaN(args[0]))
       return message

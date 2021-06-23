@@ -1,6 +1,6 @@
 const discordTTSFR = require('discord-tts-fr');
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
     const argsJoin = args.join(" ");
     const queue = message.client.queue.get(message.guild.id);
     if (queue) {

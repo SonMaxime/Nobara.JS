@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = (message) => {
+module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   let user = message.guild.member(message.mentions.users.first());
   let muteRole = message.guild.roles.cache.find(r => r.name === 'muted');
 

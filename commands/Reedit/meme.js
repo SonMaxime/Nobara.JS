@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const randomPuppy = require("random-puppy");
 
-module.exports.run = async (message) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
     const subReddits = ["dankmeme", "meme", "me_irl"];
     const random = subReddits[Math.floor(Math.random() * subReddits.length)];
 

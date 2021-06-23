@@ -1,7 +1,7 @@
 const ms = require("ms");
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = async (message, args) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   let user = message.guild.member(message.mentions.users.first());
   let muteRole = message.guild.roles.cache.find(r => r.name === 'muted');
   let muteTime = (args[1] || '60s');

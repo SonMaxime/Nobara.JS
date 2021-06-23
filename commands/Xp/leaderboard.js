@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = async (client, message) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const embed = new MessageEmbed()
     .setTitle(message.guild.language.top4OfUsers)
     .setColor("#a41f14")

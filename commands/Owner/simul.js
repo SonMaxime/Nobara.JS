@@ -1,4 +1,4 @@
-module.exports.run = async (client, message) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
     client.emit('guildMemberAdd', message.member);
 }
   

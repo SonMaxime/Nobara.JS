@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const { MessageEmbed, Message } = require("discord.js");
 
-module.exports.run = async (message) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const anime = await fetch(`https://www.reddit.com/user/emdix/m/animemes/top/.json?sort=top&t=day&limit=500`)
     .then(res => res.json())
     .then(json => json.data.children);

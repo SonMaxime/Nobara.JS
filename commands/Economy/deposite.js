@@ -1,6 +1,6 @@
 const profileModel = require('./../../models/economy');
 
-module.exports.run = async (client, message, args, economyData) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const amount = args[0];
   if (amount % 1 != 0 || amount <= 0) return message.reply(`${message.guild.language.depositNumber}`)
   try {

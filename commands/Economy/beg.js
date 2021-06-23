@@ -1,6 +1,6 @@
 const profileModel = require('./../../models/economy');
 
-module.exports.run = async (client, message, args, economyData) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const randomNumber = Math.floor(Math.random() * 700) + 1;
 
   try {

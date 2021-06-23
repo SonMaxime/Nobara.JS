@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = async (client, message) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
     message.delete();
     const permissions = message.channel.permissionsFor(message.client.user);
     if (!permissions.has(["MANAGE_MESSAGES", "ADD_REACTIONS"]))

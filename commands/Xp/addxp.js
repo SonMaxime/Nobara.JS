@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   const user = message.guild.member(message.mentions.users.first());
   const expToAdd = parseInt(args[1]);
   if (isNaN(expToAdd)) return message.reply(message.guild.language.needToTag);

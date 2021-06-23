@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
     const replies = [message.guild.language.yes, message.guild.language.no, message.guild.language.maybe, message.guild.language.miskina, message.guild.language.ptdr, message.guild.language.quelPlaisir]
     const question = args.join(" ");
     const responce = Math.floor(Math.random() * replies.length);

@@ -1,6 +1,6 @@
 const { canModifyQueue } = require("./../../util/util");
 
-module.exports.run = (client, message, args) => {
+module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   message.delete();
   const queue = message.client.queue.get(message.guild.id);
   if (!queue) return message.channel.send(message.guild.language.noQueue).catch(console.error);

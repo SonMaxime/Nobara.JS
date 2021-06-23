@@ -1,4 +1,4 @@
-module.exports.run = async (message) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   if (message.author.id !== "492402867953467392") return;
   await message.delete();
   await message.channel.send(message.guild.language.restartBot);

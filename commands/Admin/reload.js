@@ -1,4 +1,4 @@
-module.exports.run = async (message) => {
+module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   await message.delete();
   await message.channel.send(message.guild.language.restartBot);
   process.exit();
