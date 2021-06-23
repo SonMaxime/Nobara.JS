@@ -1,7 +1,7 @@
 <img width="150" height="150" align="left" style="float: left; margin: 0 10px 10px 0;" alt="Nobara" src="https://i.imgur.com/gLW9HMt.jpg">
 
 
-# Nobara
+# Nobara 🔨🔩
 
 <p>
   <a href="https://twitter.com/SonMaxime_" target="_blank">
