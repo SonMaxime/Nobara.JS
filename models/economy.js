@@ -17,10 +17,11 @@ const economySchema = new mongoose.Schema({
     bank: {
         type: Number
     },
-    daily: {
-        type: Number,
-        default: new Date() - 86400000
-    },
+    cookie: { type: Number, default: 0 },
+    fish: { type: Number, default: 0 },
+    car: { type: Number, default: 0 },
+    book: { type: Number, default: 0 },
+    computer: { type: Number, default: 0 }
 })
 
 const model = mongoose.model("eco", economySchema)
