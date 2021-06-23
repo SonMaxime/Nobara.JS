@@ -45,7 +45,7 @@ module.exports = async (client, message) => {
       },
       {
           $inc: {
-              coins: 100
+              coins: 150
           },
       }
     )
