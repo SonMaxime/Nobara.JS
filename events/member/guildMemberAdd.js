@@ -30,7 +30,7 @@ module.exports = async (client, member) => {
   x = canvas.width / 2 - textSettings.measureText(text).width / 2
   textSettings.fillText(text, x, 170)
 
-  textSettings.font = '50px sans-serif'
+  textSettings.font = '49px sans-serif'
   textSettings.fillStyle = '#ffffff'
   text = `Welcome to the server. Don't forget to read the rules.`
   x = canvas.width / 2 - textSettings.measureText(text).width / 2
