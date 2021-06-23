@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     { name: 'Fish', value: '`ID: fish`, 300 coins', inline: true },
     { name: 'Car', value: '`ID: car`, 1000 coins', inline: true },
     { name: 'Book', value: '`ID: book`, 150 coins', inline: true },
-    { name: 'Computer', value: '`ID: pc`, 700 coins', inline: true }
+    { name: 'Computer', value: '`ID: pc`, 700 coins', inline: true },
   )
   .addField('\u200b', '\u200b')
   .addField("Sell Item", '[AVIABLE SOON]()', true)
