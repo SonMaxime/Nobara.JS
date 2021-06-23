@@ -10,7 +10,7 @@
 </p>
 
 [![Repo Size](https://img.shields.io/github/languages/code-size/SonMaxime/Nobara.JS?style=for-the-badge&label=SIZE&logo=github)](/../../)
-[![GPL License](https://img.shields.io/badge/License-GPL-blue?style=for-the-badge&logo=github)](LICENSE)
+[![GPL License](https://img.shields.io/badge/License-AGPL-blue?style=for-the-badge&logo=github)](LICENSE)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
 ## Supported Languages
