@@ -26,7 +26,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
           (song.duration == 0 ? " ◉ LIVE" : new Date(song.duration * 1000).toISOString().substr(11, 8)),
         false
       );
-      nowPlaying.setFooter(message.guild.language.timeRimain + new Date(left * 1000).toISOString().substr(11, 8));
+      nowPlaying.setFooter(message.guild.language.nowplaying.timeRimain + new Date(left * 1000).toISOString().substr(11, 8));
     }
 
     return message.channel.send(nowPlaying)

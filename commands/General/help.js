@@ -5,16 +5,16 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     const menuEmbed = new MessageEmbed()
     .setColor("#36393F")
     .setTitle('Help Menu of Nobara')
-    .setDescription(message.guild.language.listOfCommandsDescription)
+    .setDescription(message.guild.language.help.listOfCommandsDescription)
     .addFields(
-      {name: ":gear: `Admin` : ", value: `${message.guild.language.adminDescription}`},
-      {name: ":video_game: `Fun` : ", value: `${message.guild.language.funDescription}`},
-      {name: ":thought_balloon: `General` : ", value: `${message.guild.language.miscDescription}`},
-      {name: ":tools: `Moderation` : ", value: `${message.guild.language.modDescription}`},
-      {name: ":musical_note: `Music` : ", value: `${message.guild.language.musicDescription}`},
-      {name: ":newspaper: `Reedit` : ", value: `${message.guild.language.reeditDescription}`},
-      {name: ":crossed_swords: `XP` : ", value: `${message.guild.language.xpDescription}`},
-      {name: ":money_with_wings: `Economy` : ", value: `${message.guild.language.economyDescription}`}
+      {name: ":gear: `Admin` : ", value: `${message.guild.language.help.adminDescription}`},
+      {name: ":video_game: `Fun` : ", value: `${message.guild.language.help.funDescription}`},
+      {name: ":thought_balloon: `General` : ", value: `${message.guild.language.help.miscDescription}`},
+      {name: ":tools: `Moderation` : ", value: `${message.guild.language.help.modDescription}`},
+      {name: ":musical_note: `Music` : ", value: `${message.guild.language.help.musicDescription}`},
+      {name: ":newspaper: `Reedit` : ", value: `${message.guild.language.help.reeditDescription}`},
+      {name: ":crossed_swords: `XP` : ", value: `${message.guild.language.help.xpDescription}`},
+      {name: ":money_with_wings: `Economy` : ", value: `${message.guild.language.help.economyDescription}`}
     )
     var reactionMessage = await message.channel.send(menuEmbed)
     await reactionMessage.react("⚙️");
@@ -47,7 +47,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           const skiptocommand = client.commands.get("skipto");
           const musicEmbed = new MessageEmbed()
           .setTitle('Music Help')
-          .setDescription(message.guild.language.listOfCommandsDescription)
+          .setDescription(message.guild.language.help.listOfCommandsDescription)
           .addFields(
             {name: "`nowplaying` :", value: `${npcommand.help.description}`},
             {name: "`play` : ", value: `${playcommand.help.description}`},
@@ -66,7 +66,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           const fakesaycommand = client.commands.get("fakesay");
           const funEmbed = new MessageEmbed()
           .setTitle('Fun Help')
-          .setDescription(message.guild.language.listOfCommandsDescription)
+          .setDescription(message.guild.language.help.listOfCommandsDescription)
           .addFields(
             {name: "`8ball` :", value: `${ballcommand.help.description}`},
             {name: "`rps` : ", value: `${rpscommand.help.description}`},
@@ -84,7 +84,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           const saycommand = client.commands.get("say");
           const generalEmbed = new MessageEmbed()
           .setTitle('General Help')
-          .setDescription(message.guild.language.listOfCommandsDescription)
+          .setDescription(message.guild.language.help.listOfCommandsDescription)
           .addFields(
             {name: "`botinfo` :", value: `${botinfocommand.help.description}`},
             {name: "`help` : ", value: `${helpcommand.help.description}`},
@@ -106,7 +106,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           const unmutecommand = client.commands.get("unmute");
           const modEmbed = new MessageEmbed()
           .setTitle('Moderation Help')
-          .setDescription(message.guild.language.listOfCommandsDescription)
+          .setDescription(message.guild.language.help.listOfCommandsDescription)
           .addFields(
             {name: "`ban` :", value: `${bancommand.help.description}`},
             {name: "`kick` : ", value: `${kickcommand.help.description}`},
@@ -126,7 +126,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           const setwelcomecommand = client.commands.get("setwelcome");
           const adminEmbed = new MessageEmbed()
           .setTitle('Admin Help')
-          .setDescription(message.guild.language.listOfCommandsDescription)
+          .setDescription(message.guild.language.help.listOfCommandsDescription)
           .addFields(
             {name: "`configdb` :", value: `${configdbcommand.help.description}`},
             {name: "`eval` : ", value: `${evalcommand.help.description}`},
@@ -142,7 +142,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           const memecommand = client.commands.get("meme");
           const reeditEmbed = new MessageEmbed()
           .setTitle('Meme Help')
-          .setDescription(message.guild.language.listOfCommandsDescription)
+          .setDescription(message.guild.language.help.listOfCommandsDescription)
           .addFields(
             {name: "`anime` :", value: `${animecommand.help.description}`},
             {name: "`hmmm` : ", value: `${hmmmcommand.help.description}`},
@@ -160,7 +160,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           const removexpcommand = client.commands.get("removexp")
           const xpEmbed = new MessageEmbed()
           .setTitle('XP Help')
-          .setDescription(message.guild.language.listOfCommandsDescription)
+          .setDescription(message.guild.language.help.listOfCommandsDescription)
           .addFields(
             {name: "`addxp` :", value: `${addxpcommand.help.description}`},
             {name: "`exp` : ", value: `${expcommand.help.description}`},
@@ -180,7 +180,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           const withdrawcommand = client.commands.get("withdraw");
           const ecoembed = new MessageEmbed()
           .setTitle('Economy Help')
-          .setDescription(message.guild.language.listOfCommandsDescription)
+          .setDescription(message.guild.language.help.listOfCommandsDescription)
           .addFields(
             {name: "`balance` :", value: `${balancecommand.help.description}`},
             {name: "`beg` : ", value: `${begcommand.help.description}`},
@@ -213,7 +213,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
   } else {
     message.delete();
     const command = client.commands.get(args[0]) || client.commands.find(cmd => cmd.help.aliases && cmd.help.aliases.includes(args[0]));
-    if (!command) return message.reply(message.guild.language.commandNoExist);
+    if (!command) return message.reply(message.guild.language.help.commandNoExist);
 
     const embed = new MessageEmbed()
       .setColor("#36393F")

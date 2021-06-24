@@ -13,7 +13,7 @@ const economySchema = new mongoose.Schema({
     coins: {
         type: Number,
         default: 1000
-      },
+    },
     bank: {
         type: Number
     },

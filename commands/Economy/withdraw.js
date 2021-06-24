@@ -4,12 +4,12 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     const amount = args[0];
 
     if (amount % 1 != 0 || amount <= 0) {
-        return message.channel.send(message.guild.language.withdrawNumber)
+        return message.channel.send(message.guild.language.withdraw.withdrawNumber)
     }
 
     try {
         if (amount > economyData.bank) {
-            return message.channel.send(message.guild.language.dontAmountBank)
+            return message.channel.send(message.guild.language.withdraw.dontAmountBank)
         } else {
             await profileModel.findOneAndUpdate(
                 {
@@ -23,7 +23,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                 }
             );
 
-            return message.channel.send(`${message.guild.language.youWithdrew}` + `${amount} ` + `${message.guild.language.ofCoinsInWallet}`)
+            return message.channel.send(`${message.guild.language.withdraw.youWithdrew}` + `${amount} ` + `${message.guild.language.withdraw.ofCoinsInWallet}`)
         }
     } catch (err) {
         console.log(err)

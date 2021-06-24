@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
   };
 
   await user.roles.add(muteRole.id);
-  message.channel.send(`<@${user.id}>` + message.guild.language.isMuted + `${ms(ms(muteTime))}.`);
+  message.channel.send(`<@${user.id}>` + message.guild.language.mute.isMuted + `${ms(ms(muteTime))}.`);
 
   setTimeout(() => {
     user.roles.remove(muteRole.id);

@@ -1,13 +1,18 @@
 const profileModel = require('./../../models/economy');
+const { MessageEmbed } = require('discord.js');
 
 module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const item = args[0];
+
+  const embed = new MessageEmbed()
+  .setDescription(message.guild.language.sell.sellSucess)
+  .setFooter(message.guild.language.sell.buyAgain)
 
   if (item === 'cookie') {
       const cookiePrice = 250;
       const cookieAmount = 1;
       if (economyData.cookie < cookieAmount) {
-          return message.reply(message.guild.language.pasPossibleSell)
+          return message.reply(message.guild.language.sell.pasPossibleSell)
       } else {
         await profileModel.findOneAndUpdate(
               {
@@ -20,13 +25,13 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                   },
               },
           )
-        return message.channel.send(message.guild.language.sellSucess)
+        return message.channel.send(embed)
       }
   } else if (item === 'fish') {
       const fishPrice = 300;
       const fishAmount = 1;
       if (economyData.fish < fishAmount) {
-        return message.reply(message.guild.language.pasPossibleSell)
+        return message.reply(message.guild.language.sell.pasPossibleSell)
       } else {
         await profileModel.findOneAndUpdate(
               {
@@ -39,14 +44,14 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                   },
               },
           )
-        return message.channel.send(message.guild.language.sellSucess)
+        return message.channel.send(embed)
       }
   } else {
       if (item === 'car') {
           const carPrice = 1000;
           const carAmount = 1;
           if (economyData.car < carAmount) {
-            return message.reply(message.guild.language.pasPossibleSell)
+            return message.reply(message.guild.language.sell.pasPossibleSell)
           } else {
               await profileModel.findOneAndUpdate(
                   {
@@ -59,14 +64,14 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                       }
                   },
               )
-              return message.channel.send(message.guild.language.sellSucess)
+              return message.channel.send(embed)
           }
       } else {
           if (item === 'book') {
               const bookPrice = 150;
               const bookAmount = 1;
               if (economyData.book < bookAmount) {
-                return message.reply(message.guild.language.pasPossibleSell)
+                return message.reply(message.guild.language.sell.pasPossibleSell)
               } else {
                   await profileModel.findOneAndUpdate(
                       {
@@ -79,14 +84,14 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                           },
                       },
                   )
-                  return message.channel.send(message.guild.language.sellSucess)
+                  return message.channel.send(embed)
               }
           } else {
               if (item === 'pc') {
                   const pcPrice = 700;
                   const pcAmount = 1;
                   if (economyData.computer < pcAmount) {
-                    return message.reply(message.guild.language.pasPossibleSell)
+                    return message.reply(message.guild.language.sell.pasPossibleSell)
                   } else {
                       await profileModel.findOneAndUpdate(
                           {
@@ -99,7 +104,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                               },
                           },
                       )
-                      return message.channel.send(message.guild.language.sellSucess)
+                      return message.channel.send(embed)
                   }
               }
           }

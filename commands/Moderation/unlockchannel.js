@@ -2,12 +2,12 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
     message.delete();
     if (!client.lockit) client.lockit = [];
     message.channel.updateOverwrite(message.guild.roles.everyone, {
-        SEND_MESSAGES: false
+        SEND_MESSAGES: true
     }).then(g => {
         g.edit({
-            name: ' 🔒' + g.name
+            name: g.name
         })
-        g.send(`${message.guild.language.lockchannel.lockedChannel}: ${message.author}`)
+        g.send(`${message.guild.language.unlockchannel.unlockedChannel}: ${message.author}`)
     })
 };
 

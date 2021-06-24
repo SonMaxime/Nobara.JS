@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
-  if (isNaN(args[0]) || (args[0] < 1 || args[0] > 100)) return message.reply(message.guild.language.specifyNumberBetweenOneAnd100);
+  if (isNaN(args[0]) || (args[0] < 1 || args[0] > 100)) return message.reply(message.guild.language.purge.specifyNumberBetweenOneAnd100);
 
   const messages = await message.channel.messages.fetch({
     limit: Math.min(args[0], 100),

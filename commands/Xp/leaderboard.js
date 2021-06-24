@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const embed = new MessageEmbed()
-    .setTitle(message.guild.language.top4OfUsers)
+    .setTitle(message.guild.language.leaderboard.top4OfUsers)
     .setColor("#a41f14")
     .setTimestamp()
     .setFooter("Experience")

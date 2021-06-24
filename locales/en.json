@@ -1,106 +1,195 @@
 {
-    "prefix": "Prefix updated ",
-    "prefixActual": "Actual prefix",
-    "welcomeChannel": "Welcome channel updated: ",
-    "welcomeChannelError": "Please specify the channel you want to use as the welcome channel.",
-    "restartBot": "Reload.",
-    "haveRemoved": "You have removed",
-    "listOfCommands": "List of commands",
-    "listOfCommandsDescription": "A list of all commands available and their subcategories. \nFor more details on a command, send `<prefix>help <command name>`",
-    "xpToUser": "xp to the user",
-    "uHave": "You have ",
-	"xpInStock": " xp !",
-    "yes": "Yes.",
-    "no": "No.",
-    "maybe": "Maybe.",
-    "miskina": "miskina.",
-    "ptdr": "ptdr",
-    "quelPlaisir": "lmao.",
-    "et": "and",
-    "uWin": "U are the winner !",
-    "draw": "Draw.",
-    "uLost": "U lost...",
-    "replyPollWithReact": "Reply to this poll w/ a react :",
-    "pour": "For",
-    "neutre": "neutral",
-    "conte": "Against",
-    "nePasHesiterARefaireUnSondage": "Do not hesitate to remake other surveys !",
-    "noReason": "Aucune raison provenue.",
-    "userNoExist": "This user is not found or you may have made a mistake.",
-    "isMuted": "is mute for",
-    "isUnmuted": "is unmute.",
-    "isNotMuted": "is not muted.",
-    "specifyNumberBetweenOneAnd100": "Please come with a number between 1 and 100",
-    "nothingDelete": "no message to delete on this user (or this user does not exist).",
-    "user": "User",
-    "specify_language": "Please specify a language.",
-    "specify_valid_language": "Please specify an existing language.",
-    "language_updated": "Language updated.",
-    "noteOfKick": "NOTE: Votes needed to kick : 5 ou +.",
-    "nothingPlaying": "There's nothing played here.",
-    "timeRimain": "Time remaining : ",
-    "needVocal": "you need to be in a vocal channel.",
-    "sameVocal": "You need to be in the same vocal than ",
-    "urlNoFound": "Nothing founded from this url.",
-    "hasBeenAdded": " has been added to the queue by ",
-    "cantJoin": "Cant't join the canal for the following reason : ",
-    "playlistNotFound": "Playlist not found :(",
-    "startedPlaylist": "has started the playlist : ",
-    "playlistTooLong": "The playlist is more long than limit max...",
-    "noQueue": "❌ **Nothing is played in this server**",
-    "leaveVocal": "Leaving the vocal...",
-    "queueEnded": "❌ Queue ended.",
-    "actualPage": "Actual page",
-    "playingNow": "Playing",
-    "aRetiré": "has deleted ",
-    "fromQueue": " from the queue",
-    "alreadyCollector": "A message collector is already active in this server.",
-    "replyWithNumber": "**Reply w/ the exact number**",
-    "onlyQueueNumber": "there is only",
-    "inTheQueue": "songs in the queue.",
-    "needToTag": "you need to enter a number or a @tag if you have not provided it.",
-    "vousAvezAjoute": "You successfully added ",
-    "pointsUser": " xp at the user : ",
-    "top4OfUsers": "Top 4 of users in the server",
-    "youAreLevel" : "You are level :",
-    "noPermToUse": "you don't have permissions to use this command.",
-    "noArgs": "Some arguments need to be provided, ",
-    "howToUse": "This is how you can use the command : ",
-    "needToTagSomeone": "il faut mentionner un utilisateur.",
-    "pleaseWait": "please wait ",
-    "pleaseWaitSeconds": "seconds before use again the command : ",
-    "setPause": "has set the music on pause.",
-    "setPlay": "▶ has set the music on play.",
-    "unmute": "has unmute the music.",
-    "mute": "has mute the music.",
-    "lowMusic": "has set the volume on",
-    "augMusic": "has set the volume on",
-    "stopMusic": "has stoped the music.",
-    "userLeave": "A user has leaved the guild.",
-    "mentionBeforeText": "Please originate your message after registering a member.",
-    "provideExistUser": "Please come from an existing / valid member.",
-    "coinsCount": "Ur coins balance is:", 
-    "bankCount": "and ur bank balance is: ",
-    "begged": "u begged and recived: ", 
-    "coins": "coins",
-    "depositNumber": "Deposit amount must be a whole number.",
-    "pasPossible": "You don't have that amount of coins to deposit.",
-    "deposited": "You deposited: ", 
-    "sucessDeposite": "of coins into your bank.",
-    "mentionPlayer": "You need to mention a player to give them coins.",
-    "userDontExistInDB": "This user doesn't exist in the database.",
-    "playerGivenCoins": "This player has been given their coins! ",
-    "amountOfCoins": "of coins !",
-    "withdrawNumber": "Withdraw amount must be a whole number.",
-    "dontAmountBank": "You don't have that amount of coins to withdraw.",
-    "youWithdrew": "You withdrew ",
-    "ofCoinsInWallet": "of coins into your wallet.",
-    "adminDescription": "List of all admin commands.",
-	"funDescription": "List of all fun commands.",
-	"miscDescription": "List of all commands available for everyone",
-	"modDescription": "List of all commands available for moderators.",
-	"musicDescription": "List of all music commands.",
-	"reeditDescription": "List of all memes commands.",
-    "xpDescription": "List of all expreience commands.",
-    "economyDescription": "List of all economy commands."
+    "configdb": {
+        "prefix": "Prefix updated ",
+        "prefixActual": "Actual prefix"
+    },
+    "reload": {
+        "restartBot": "Reloading."
+    },
+    "setwelcome": {
+        "welcomeChannel": "Welcome channel updated: ",
+        "welcomeChannelError": "Please specify the channel you want to use as the welcome channel."
+    },
+    "setxpchannel": {
+        "xpChannel": "Level UP channel updated: ",
+        "welcomeChannelError": "Please specify the channel you want to use as the Level UP channel."
+    },
+    "beg": {
+        "begged": "u begged and recived: ",
+        "coins": "coins"
+    },
+    "buy": {
+        "buySucess": "You buyed this object w/sucess.",
+        "pasPossible": "You don't have that amount of coins to deposit."
+    },
+    "deposite": {
+        "depositNumber": "Deposit amount must be a whole number.",
+        "pasPossible": "You don't have that amount of coins to deposit.",
+        "deposited": "You deposited: ",
+        "sucessDeposite": "of coins into your bank."
+    },
+    "give": {
+        "mentionPlayer": "You need to mention a player to give them coins.",
+        "userDontExistInDB": "This user doesn't exist in the database.",
+        "depositNumber": "Deposit amount must be a whole number.",
+        "playerGivenCoins": "This player has been given their coins! ",
+        "amountOfCoins": "of coins !"
+    },
+    "sell": {
+        "sellSucess": "You sold this object w/ sucess.",
+        "buyAgain": "Use `prefix`buy {item_ID} if u want to buy this object again.",
+        "pasPossibleSell": "You can't sell an objet that you don't have."
+    },
+    "store": {
+        "shopDescription": "Spend ur coins in the store.",
+        "shopFooter": "Use `prefix`buy {item_ID} for buy objects in the shop."
+    },
+    "withdraw": {
+        "withdrawNumber": "Withdraw amount must be a whole number.",
+        "dontAmountBank": "You don't have that amount of coins to withdraw.",
+        "youWithdrew": "You withdrew ",
+        "ofCoinsInWallet": "of coins into your wallet."
+    },
+    "eightball": {
+        "yes": "Yes.",
+        "no": "No.",
+        "maybe": "Maybe.",
+        "miskina": "miskina.",
+        "ptdr": "ptdr",
+        "quelPlaisir": "lmao."
+    },
+    "fakesay": {
+        "provideExistUser": "Please come from an existing / valid member.",
+        "mentionBeforeText": "Please originate your message after registering a member."
+    },
+    "rps": {
+        "ajouterReactionJouer": "Add a reaction to play.",
+        "uWin": "U are the winner !",
+        "draw": "Draw.",
+        "uLost": "U lost..."
+    },
+    "help": {
+        "commandNoExist": "This command does not exist.",
+        "listOfCommandsDescription": "A list of all commands available and their subcategories. \nFor more details on a command, send `<prefix>help <command name>`",
+        "adminDescription": "List of all admin commands.",
+        "funDescription": "List of all fun commands.",
+        "miscDescription": "List of all commands available for everyone",
+        "modDescription": "List of all commands available for moderators.",
+        "musicDescription": "List of all music commands.",
+        "reeditDescription": "List of all memes commands.",
+        "xpDescription": "List of all expreience commands.",
+        "economyDescription": "List of all economy commands."
+    },
+    "poll": {
+        "replyPollWithReact": "Reply to this poll w/ a react :",
+        "pour": "For",
+        "neutre": "neutral",
+        "conte": "Against",
+        "nePasHesiterARefaireUnSondage": "Do not hesitate to remake other surveys !"
+    },
+    "ban": {
+        "noReason": "No reason provided.",
+        "userNoExist": "This user is not found or you may have made a mistake."
+    },
+    "kick": {
+        "noReason": "No reason provided.",
+        "userNoExist": "This user is not found or you may have made a mistake."
+    },
+    "language": {
+        "specify_language": "Please specify a language.",
+        "specify_valid_language": "Please specify an existing language.",
+        "language_updated": "Language updated."
+    },
+    "lockchannel": {
+        "channelLocked": "🔒 | The channel was locked by"
+    },
+    "mute": {
+        "isMuted": "is mute for"
+    },
+    "purge": {
+        "specifyNumberBetweenOneAnd100": "Please come with a number between 1 and 100"
+    },
+    "unloclkchannel": {
+        "unlockedChannel": "🔒 | The channel was unlocked by"
+    },
+    "unmute": {
+        "isNotMuted": "is not muted.",
+        "isUnmuted": "is unmute."
+    },
+    "clip": {
+        "needVocal": "you need to be in a vocal channel."
+    },
+    "nowplaying": {
+        "timeRimain": "Time remaining : "
+    },
+    "play": {
+        "needVocal": "you need to be in a vocal channel.",
+        "sameVocal": "You need to be in the same vocal than ",
+        "urlNoFound": "Nothing founded from this url.",
+        "hasBeenAdded": " has been added to the queue by: ",
+        "cantJoin": "Cant't join the canal for the following reason : "
+    },
+    "playlist": {
+        "needVocal": "you need to be in a vocal channel.",
+        "sameVocal": "You need to be in the same vocal than ",
+        "playlistNotFound": "Playlist not found :(",
+        "playlistTooLong": "The playlist is more long than limit max...",
+        "startedPlaylist": "has started the playlist : ",
+        "cantJoin": "Cant't join the canal for the following reason : "
+    },
+    "queue":{
+        "noQueue": "❌ **Nothing is played in this server**",
+        "actualPage": "Actual page",
+        "playingNow": "Playing"
+    },
+    "remove": {
+        "noQueue": "❌ **Nothing is played in this server**",
+        "aRetiré": "has deleted ",
+        "fromQueue": " from the queue"
+    },
+    "skipto": {
+        "noQueue": "❌ **Nothing is played in this server**",
+        "onlyQueueNumber": "there is only",
+        "inTheQueue": "songs in the queue."
+    },
+    "addxp": {
+        "needToTag": "you need to enter a number or a @tag if you have not provided it.",
+        "vousAvezAjoute": "You successfully added ",
+        "pointsUser": " xp at the user : "
+    },
+    "exp": {
+        "uHave": "You have ",
+	    "xpInStock": " xp !"
+    },
+    "leadreboard": {
+        "top4OfUsers": "Top 4 of users in the server"
+    },
+    "level": {
+        "youAreLevel" : "You are level :"
+    },
+    "removexp": {
+        "haveRemoved": "You have removed",
+        "xpToUser": "xp to the user"
+    },
+    "messageEvent": {
+        "noArgs": "Some arguments need to be provided, ",
+        "howToUse": "This is how you can use the command : ",
+        "needToTagSomeone": "you need to tag someone.",
+        "cantUseCommandOnUser": "you can't use this command on this user.",
+        "pleaseWait": "please wait ",
+        "pleaseWaitSeconds": "seconds before use again the command : "
+    },
+    "musicModule": {
+        "queueEnded": "❌ Queue ended.",
+        "leaveVocal": "Leaving the vocal...",
+        "setPause": "has set the music on pause.",
+        "setPlay": "▶ has set the music on play.",
+        "unmute": "has unmute the music.",
+        "mute": "has mute the music.",
+        "lowMusic": "has set the volume on",
+        "augMusic": "has set the volume on",
+        "stopMusic": "has stoped the music.",
+        "skip": "has skipped the music.",
+        "playingNow": "Now playing"
+    }
 }

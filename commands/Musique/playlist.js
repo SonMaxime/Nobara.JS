@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
   const { channel } = message.member.voice;
   const serverQueue = message.client.queue.get(message.guild.id);
 
-  if (!channel) return message.reply(message.guild.language.needVocal)
+  if (!channel) return message.reply(message.guild.language.playlist.needVocal)
   .then(msg => {
     msg.delete(3000)
   })
@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     .catch(console.error);
 
   if (serverQueue && channel !== message.guild.me.voice.channel)
-    return message.reply(message.guild.language.sameVocal + `${message.client.user}`)
+    return message.reply(message.guild.language.playlist.sameVocal + `${message.client.user}`)
     .then(msg => {
       msg.delete({ timeout: 3000 })
     })
@@ -60,7 +60,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
       videos = await playlist.getVideos(MAX_PLAYLIST_SIZE || 10, { part: "snippet" });
     } catch (error) {
       console.error(error);
-      return message.reply(message.guild.language.playlistNotFound)
+      return message.reply(message.guild.language.playlist.playlistNotFound)
       .then(msg => {
         msg.delete({ timeout: 3000 })
       })
@@ -112,9 +112,9 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
 
   if (playlistEmbed.description.length >= 2048)
     playlistEmbed.description =
-    playlistEmbed.description.substr(0, 2007) + message.guild.language.playlistTooLong;
+    playlistEmbed.description.substr(0, 2007) + message.guild.language.playlist.playlistTooLong;
 
-  message.channel.send(`${message.author} ` + message.guild.language.startedPlaylist, playlistEmbed)
+  message.channel.send(`${message.author} ` + message.guild.language.playlist.startedPlaylist, playlistEmbed)
   .then(msg => {
     msg.delete({ timeout: 10000 })
   })
@@ -131,7 +131,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
       console.error(error);
       message.client.queue.delete(message.guild.id);
       await channel.leave();
-      return message.channel.send(message.guild.language.cantJoin + ` ${error.message}`)
+      return message.channel.send(message.guild.language.playlist.cantJoin + ` ${error.message}`)
       .then(msg => {
         msg.delete({ timeout: 3000 })
       })

@@ -11,14 +11,14 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
         .catch(console.error);
 
     const queue = message.client.queue.get(message.guild.id);
-    if (!queue) return message.channel.send(message.guild.language.noQueue)
+    if (!queue) return message.channel.send(message.guild.language.skipto.noQueue)
     .then(msg => {
       msg.delete({ timeout: 3000 })
     })
     .catch(console.error);
     if (!canModifyQueue(message.member)) return;
     if (args[0] > queue.songs.length)
-      return message.reply(message.guild.language.onlyQueueNumber + ` ${queue.songs.length} ` + message.guild.language.inTheQueue)
+      return message.reply(message.guild.language.skipto.onlyQueueNumber + ` ${queue.songs.length} ` + message.guild.language.skipto.inTheQueue)
       .then(msg => {
         msg.delete({ timeout: 3000 })
       })

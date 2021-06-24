@@ -46,11 +46,11 @@ module.exports.run = async (client, message, args, settings, dbUser) => {
 
       case "⏹":
         collector.stop();
-        break;
+      break;
 
       default:
         reaction.users.remove(user).catch(console.error);
-        break;
+      break;
     }
 
     collector.on("end", () => {

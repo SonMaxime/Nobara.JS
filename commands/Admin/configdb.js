@@ -6,9 +6,9 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     case "prefix": {
       if (newSetting) {
         await client.updateGuild(message.guild, { prefix: newSetting });
-        return message.channel.send(message.guild.language.prefix + `: \`${settings.prefix}\`-> \`${newSetting}\``);
+        return message.channel.send(message.guild.language.configdb.prefix + `: \`${settings.prefix}\`-> \`${newSetting}\``);
       }
-      message.channel.send(message.guild.language.prefixActual + `: \`${settings.prefix}\``);
+      message.channel.send(message.guild.language.configdb.prefixActual + `: \`${settings.prefix}\``);
       break;
     }
   }

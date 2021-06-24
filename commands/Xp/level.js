@@ -4,7 +4,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   const embed = new MessageEmbed()
   .setTitle(`Level of ${message.author.username}`)
   .setColor("#dc143c")
-  .setDescription(message.guild.language.youAreLevel + ` ${dbUser.level}.`)
+  .setDescription(message.guild.language.level.youAreLevel + ` ${dbUser.level}.`)
   .setFooter(`Level Discord via cloud.mongodb.com`, message.author.displayAvatarURL())
 
   message.channel.send(embed)

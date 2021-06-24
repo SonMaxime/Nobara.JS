@@ -11,13 +11,13 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
   const { channel } = message.member.voice;
 
   const serverQueue = message.client.queue.get(message.guild.id);
-  if (!channel) return message.reply(message.guild.language.needVocal)
+  if (!channel) return message.reply(message.guild.language.play.needVocal)
   .then(msg => {
     msg.delete({ timeout: 3000 })
   })
   .catch(console.error);
   if (serverQueue && channel !== message.guild.me.voice.channel)
-    return message.reply(message.guild.language.sameVocal + ` ${message.client.user}`)
+    return message.reply(message.guild.language.play.sameVocal + ` ${message.client.user}`)
     .then(msg => {
       msg.delete({ timeout: 3000 })
     })
@@ -57,7 +57,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
         if (res.statusCode == "302") {
           return message.client.commands.get("play").run(client, message, [res.headers.location]);
         } else {
-          return message.reply(message.guild.language.urlNoFound)
+          return message.reply(message.guild.language.play.urlNoFound)
           .then(msg => {
             msg.delete({ timeout: 3000 })
           })
@@ -132,7 +132,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
   if (serverQueue) {
     serverQueue.songs.push(song);
     return serverQueue.textChannel
-      .send(`✅ **${song.title}**` + message.guild.language.hasBeenAdded + `${message.author}`)
+      .send(`✅ **${song.title}**` + message.guild.language.play.hasBeenAdded + `${message.author}`)
       .then(msg => {
         msg.delete({ timeout: 3000 })
       })
@@ -150,7 +150,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     console.error(error);
     message.client.queue.delete(message.guild.id);
     await channel.leave();
-    return message.channel.send(message.guild.language.cantJoin + `${error}`)
+    return message.channel.send(message.guild.language.play.cantJoin + `${error}`)
     .then(msg => {
       msg.delete({ timeout: 3000 })
     })

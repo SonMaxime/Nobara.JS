@@ -3,11 +3,11 @@ const { MessageEmbed } = require('discord.js');
 module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   const user = message.guild.member(message.mentions.users.first());
   const expToAdd = parseInt(args[1]);
-  if (isNaN(expToAdd)) return message.reply(message.guild.language.needToTag);
+  if (isNaN(expToAdd)) return message.reply(message.guild.language.addxp.needToTag);
   client.addExp(client, user, expToAdd);
   const addEmbed = new MessageEmbed()
   .setColor('BLACK')
-  .setDescription(message.guild.language.vousAvezAjoute + ` ${expToAdd} ` + message.guild.language.pointsUser + `${user}!`)
+  .setDescription(message.guild.language.addxp.vousAvezAjoute + ` ${expToAdd} ` + message.guild.language.addxp.pointsUser + `${user}!`)
   message.channel.send(addEmbed);
 };
 

@@ -23,7 +23,7 @@ module.exports = async (client, message) => {
  }
 
   if(message.content ===`<@!${message.client.user.id}>` || message.content ===`<@${message.client.user.id}>`){
-  return message.reply(`Uh-Oh! You forgot the prefix? It's \`${prefix}\``);;
+  return message.reply(`Uh-Oh! You forgot the prefix? It's \`${settings.prefix}\``);;
  }
 
   const expCd = Math.floor(Math.random() * 19) + 1;
@@ -45,7 +45,7 @@ module.exports = async (client, message) => {
       },
       {
           $inc: {
-              coins: 150
+              coins: 100
           },
       }
     )
@@ -81,16 +81,16 @@ module.exports = async (client, message) => {
   if (command.help.permissions && !message.member.hasPermission('BAN_MEMBERS')) return message.reply(message.guild.language.noPermToUse);
 
   if (command.help.args && !args.length) {
-    let noArgsReply = message.guild.language.noArgs + `${message.author}!`;
+    let noArgsReply = message.guild.language.messageEvent.noArgs + `${message.author}!`;
 
-    if (command.help.usage) noArgsReply += `\n ${message.guild.language.howToUse} \`${settings.prefix}${command.help.name} ${command.help.usage}\``;
+    if (command.help.usage) noArgsReply += `\n ${message.guild.language.messageEvent.howToUse} \`${settings.prefix}${command.help.name} ${command.help.usage}\``;
 
     return message.channel.send(noArgsReply);
   };
 
-  if (command.help.isUserAdmin && !user) return message.reply(message.guild.language.needToTagSomeone);
+  if (command.help.isUserAdmin && !user) return message.reply(message.guild.language.messageEvent.needToTagSomeone);
 
-  if (command.help.isUserAdmin && message.guild.member(user).hasPermission('BAN_MEMBERS')) return message.reply(message.guild.language.cantUseCommandOnUser);
+  if (command.help.isUserAdmin && message.guild.member(user).hasPermission('BAN_MEMBERS')) return message.reply(message.guild.language.messageEvent.cantUseCommandOnUser);
 
   if (!client.cooldowns.has(command.help.name)) {
     client.cooldowns.set(command.help.name, new Collection());
@@ -105,7 +105,7 @@ module.exports = async (client, message) => {
 
     if (timeNow < cdExpirationTime) {
       timeLeft = (cdExpirationTime - timeNow) / 1000;
-      return message.reply(`${message.guild.language.pleaseWait} ${timeLeft.toFixed(0)} ${message.guild.language.pleaseWaitSeconds} \`${command.help.name}\`.`);
+      return message.reply(`${message.guild.language.messageEvent.pleaseWait} ${timeLeft.toFixed(0)} ${message.guild.language.messageEvent.pleaseWaitSeconds} \`${command.help.name}\`.`);
     }
   }
 

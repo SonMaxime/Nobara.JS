@@ -4,10 +4,10 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   message.delete();
 
   const cible = message.mentions.users.first() || message.guild.users.cache.get(args[0]);
-  if (!cible) return message.channel.send(`${message.guild.language.provideExistUser}`)
+  if (!cible) return message.channel.send(`${message.guild.language.fakesay.provideExistUser}`)
 
   let mensagem = args.slice(1).join(' ')
-  if (!mensagem) return message.channel.send(`${message.guild.language.mentionBeforeText}`)
+  if (!mensagem) return message.channel.send(`${message.guild.language.fakesay.mentionBeforeText}`)
 
   let avatar = cible.displayAvatarURL({ dynamic: true });
   message.channel.createWebhook(cible.username, { avatar: avatar }).then(webhook => {

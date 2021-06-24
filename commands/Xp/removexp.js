@@ -3,7 +3,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   const expToRemove = parseInt(args[1]);
   if (isNaN(expToRemove)) return message.reply("faut entrer un nombre.");
   client.removeExp(client, user, expToRemove);
-  message.channel.send(`${message.guild.language.haveRemoved} ${expToRemove} ${message.guild.language.xpToUser} : ${user}!`);
+  message.channel.send(`${message.guild.language.removexp.haveRemoved} ${expToRemove} ${message.guild.language.removexp.xpToUser} : ${user}!`);
 };
 
 module.exports.help = {

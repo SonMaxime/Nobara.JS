@@ -5,14 +5,14 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     .setAuthor(message.author.username, message.author.displayAvatarURL())
     .setColor("#ad14da")
     .setDescription(args.join(" "))
-    .addField(message.guild.language.replyPollWithReact,
+    .addField(message.guild.language.poll.replyPollWithReact,
     `
-    🟩 -` + message.guild.language.pour `
-    🟦 -` + message.guild.language.neutre `
-    🟥 -` + message.guild.language.contre `
+    🟩 -` + message.guild.language.poll.pour `
+    🟦 -` + message.guild.language.poll.neutre `
+    🟥 -` + message.guild.language.poll.contre `
     `)
     .setTimestamp()
-    .setFooter(message.guild.language.nePasHesiterARefaireUnSondage)
+    .setFooter(message.guild.language.poll.nePasHesiterARefaireUnSondage)
 
   const poll = await message.channel.send(embed);
   await poll.react("🟩");

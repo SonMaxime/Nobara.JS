@@ -1,10 +1,11 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
       const { channel } = message.member.voice;
       const queue = message.client.queue.get(message.guild.id);
   
       if (!args.length) return message.reply("Usage: /clip <name>").catch(console.error);
-      if (queue) return message.reply("Can't play clip because there is an active queue.");
-      if (!channel) return message.reply(message.guild.language.needVocal).catch(console.error);
+      if (!channel) return message.reply(message.guild.language.clip.needVocal).catch(console.error);
   
       const queueConstruct = {
         textChannel: message.channel,
@@ -19,8 +20,23 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
       message.client.queue.set(message.guild.id, queueConstruct);
   
       try {
-        queueConstruct.connection = await channel.join();
-        const dispatcher = queueConstruct.connection
+        if (args[0] === 'help') {
+          const embed = new MessageEmbed()
+          .setTitle('Sound meme help')
+          .addFields(
+            { name: 'deja-vu', inline: true },
+            { name: 'dude', inline: true },
+            { name: 'fbi', inline: true },
+            { name: 'gaz', inline: true },
+            { name: 'sardoche', inline: true },
+            { name: 'triste', inline: true },
+            { name: 'xp', inline: true }
+          )
+
+          message.channel.send(embed)
+        } else {
+          queueConstruct.connection = await channel.join();
+          const dispatcher = queueConstruct.connection
           .play(`./sounds/${args[0]}.mp3`)
           .on("finish", () => {
             message.client.queue.delete(message.guild.id);
@@ -30,7 +46,8 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
             message.client.queue.delete(message.guild.id);
             channel.leave();
             console.error(err);
-          });
+          })
+        }
       } catch (error) {
         console.error(error);
     }

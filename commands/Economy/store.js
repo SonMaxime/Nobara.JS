@@ -4,17 +4,17 @@ const { MessageEmbed } = require('discord.js');
 module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const storeembed = new MessageEmbed()
   .setTitle('Shop')
-  .setDescription(message.guild.language.shopDescription)
+  .setDescription(message.guild.language.store.shopDescription)
   .addFields(
     { name: 'Cookie', value: '`ID: cookie`, 250 coins', inline: true },
     { name: 'Fish', value: '`ID: fish`, 300 coins', inline: true },
     { name: 'Car', value: '`ID: car`, 1000 coins', inline: true },
     { name: 'Book', value: '`ID: book`, 150 coins', inline: true },
-    { name: 'Computer', value: '`ID: pc`, 700 coins', inline: true },
+    { name: 'Computer', value: '`ID: pc`, 700 coins', inline: true }
   )
   .addField('\u200b', '\u200b')
   .addField("Sell Item", '[AVIABLE SOON]()', true)
-  .setFooter(message.guild.language.shopFooter)
+  .setFooter(message.guild.language.store.shopFooter)
 
   message.channel.send(storeembed)
 }

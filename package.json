@@ -1,6 +1,6 @@
 {
   "name": "nobara.js",
-  "version": "1.2.3",
+  "version": "1.1.2",
   "description": "Bot qui vient définitivement remplacer Horizon, un projet abandonné.",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "exprss": "*",
+    "ffmpeg-static": "^4.4.0",
     "form-data": "^4.0.0",
     "mongoose": "^5.12.13",
     "opusscript": "^0.0.8",

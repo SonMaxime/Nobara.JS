@@ -1,111 +1,195 @@
 {
-	"prefix": "Préfix mis à jour",
-	"prefixActual": "Préfix actuel",
-	"welcomeChannelError": "Veuillez spécifier le salon que vous voulez utiliser comme salon de bienvenue.",
-	"welcomeChannel": "Votre salon de bienvenue a été réglé sur:",
-	"restartBot": "Redémarrage en cours.",
-	"haveRemoved": "Vous avez enlevé avec succès",
-	"listOfCommands": "Liste des commandes",
-	"listOfCommandsDescription": "Une liste de toutes les sous-catégories disponibles et leurs commandes. \nPour plus d'informations sur une commande, tapez `<prefix>help <command name>`",
-	"xpToUser": "points d'expérience à l'utilisateur",
-	"uHave": "Vous avez ",
-	"xpInStock": " points d'expérience !",
-	"yes": "Oui.",
-	"no": "Non.",
-	"maybe": "Peut-être.",
-	"miskina": "miskina.",
-	"ptdr": "ptdr",
-	"quelPlaisir": "sah quel plaisir.",
-	"et": "et",
-	"uWin": "Tu as gagné !",
-	"draw": "Egalité.",
-	"uLost": "Tu as perdu...",
-	"replyPollWithReact": "Répondez au sondage avec une réaction :",
-	"pour": "Pour",
-	"neutre": "Neutre",
-	"conte": "Contre",
-	"nePasHesiterARefaireUnSondage": "N'hésitez pas à refaire d'autres sondages !",
-	"noReason": "Aucune raison provenue.",
-	"userNoExist": "Cet utilisateur n'es pas trouvé ou vous avez peut être fait une erreur.",
-	"isMuted": "est muté pour",
-	"isUnmuted": "est unmute.",
-	"isNotMuted": "n'est pas mute.",
-	"specifyNumberBetweenOneAnd100": "Veuillez provenir un nombre entre 1 et 100",
-	"nothingDelete": "aucun message à supprimer sur cet utilisateur (ou cet utilisateur n'existe pas).",
-	"user": "Utilisateur",
-	"specify_language": "Veuillez spécifier une langue.",
-	"specify_valid_language": "Veuillez spécifier une langue existante.",
-	"language_updated": "Langue modifié.",
-	"noteOfKick": "NOTE: Votes nécessaire pour kick : 5 ou +.",
-	"nothingPlaying": "Il n'y a rien de joué.",
-	"timeRimain": "Temps restant : ",
-	"needVocal": "vous devez être dans un salon vocal.",
-	"sameVocal": "Vous devez être dans le même salon que",
-	"urlNoFound": "Aucun contenu trouvé depuis cet url.",
-	"hasBeenAdded": " a été ajouté à la queue par ",
-	"cantJoin": "Ne peux pas rejoindre la salon vocal pour la raison suivante : ",
-	"playlistNotFound": "Playlist non trouvé :(",
-	"startedPlaylist": "a démarré la playlist : ",
-	"playlistTooLong": "La playlist est plus longue que la limite autorisé...",
-	"noQueue": "❌ **Rien n'est joué dans ce serveur.**",
-	"actualPage": "Page actuelle",
-	"playingNow": "En train de jouer: ",
-	"aRetiré": "a retiré ",
-	"leaveVocal": "Quitte le vocal...",
-	"queueEnded": "❌ File d'attente terminée.",
-	"fromQueue": " de la queue",
-	"alreadyCollector": "Un collecteur de messages est déjà actif dans ce salon.",
-	"replyWithNumber": "**Répondez avec le numéro du son exact.**",
-	"onlyQueueNumber": "il n'y a que",
-	"inTheQueue": "sons dans la queue.",
-	"needToTag": "il faut entrer un nombre ou un @tag si vous ne l'avez pas renseigné.",
-	"vousAvezAjoute": "Vous avez ajouté avec succès",
-	"pointsUser": "points d'expérience à l'utilisateur ",
-	"userXPLevel": "points d'expérience - Niveau",
-	"top4OfUsers": "Top 4 des utilisateurs sur le serveur",
-	"youAreLevel": "Vous êtes niveau :",
-	"noPermToUse": "tu n'as pas les permissions pour taper cette commande.",
-	"noArgs": "Il nous faut des arguments pour cette commande, ",
-	"howToUse": "Voici comment utiliser la commande: ",
-	"needToTagSomeone": "il faut mentionner un utilisateur.",
-	"cantUseCommandOnUser": "tu ne peux pas utiliser cette commande sur cet utilisateur.",
-	"pleaseWait": "merci d'attendre",
-	"pleaseWaitSeconds": "seconde(s) avant de ré-utiliser la commande",
-	"setPause": "a mis la musique sur pause.",
-	"setPlay": "▶ a remis la musique sur play.",
-	"unmute": "a unmute la musique.",
-	"mute": "a mute la musique.",
-	"lowMusic": "a baissé la musique sur",
-	"augMusic": "a augmenté la musique sur",
-	"stopMusic": "a stopté la musique.",
-	"userLeave": "Un utilisateur(trice) a quitté le serveur.",
-	"coinsCount": "Votre balance de pièces est de: ", 
-    "bankCount": "et votre balance sur votre compte en banque est de: ",
-    "begged": "vous avez réclamé et reçu: ", 
-    "coins": "pièces",
-    "depositNumber": "Le montant du dépôt doit être un nombre entier.",
-    "pasPossible": "Vous n'avez pas ce montant de pièces à déposer.",
-    "deposited": "Vous avez déposé: ", 
-    "sucessDeposite": "pièces dans votre banque.",
-    "mentionPlayer": "Vous devez mentionner un joueur pour lui donner des pièces.",
-    "userDontExistInDB": "Cet utilisateur n'existe pas dans la base de données.",
-    "playerGivenCoins": "Ce joueur a reçu ses pièces ! ",
-    "amountOfCoins": "pièces !",
-    "withdrawNumber": "Le montant du retrait doit être un nombre entier.",
-    "dontAmountBank": "Vous n'avez pas ce montant de pièces à retirer.",
-    "youWithdrew": "Vous avez retiré ",
-    "ofCoinsInWallet": "pièces dans votre portefeuille.",
-	"mentionBeforeText": "Veuillez provenir votre message après avoir memtionner un membre.",
-	"provideExistUser": "Veuillez provenir un membre existant/valide",
-	"shopDescription": "Spend your coins in the wholesome shop.",
-	"shopFooter": "Use `>buy {item_ID} [optional]` to buy stuff from the shop.",
-	"buySucess": "Vous avez acheté cet objet avec succes.",
-	"adminDescription": "Liste de toutes les comandes destinées aux Admin.",
-	"funDescription": "Liste de toutes les commandes amusantes.",
-	"miscDescription": "Liste des commandes accessible à tous.",
-	"modDescription": "Liste des commandes destinées aux modérateurs.",
-	"musicDescription": "Liste de toutes les commandes musicales.",
-	"reeditDescription": "Liste des commandes meme.",
-	"xpDescription": "Liste de toutes les commandes xp",
-	"economyDescription": "Liste de toutes les commandes d'économie."
+    "configdb": {
+        "prefix": "Prefix mis à jour ",
+        "prefixActual": "Préfix actuel "
+    },
+    "reload": {
+        "restartBot": "Reloading."
+    },
+    "setwelcome": {
+        "welcomeChannel": "Welcome channel updated: ",
+        "welcomeChannelError": "Veuillez spécifier le salon que vous souhaitez utiliser comme welcome channel."
+    },
+    "setxpchannel": {
+        "xpChannel": "Level UP channel updated: ",
+        "welcomeChannelError": "Veuillez spécifier le salon que vous souhaitez utiliser comme Level UP channel."
+    },
+    "beg": {
+        "begged": "vous avez réclamé et reçu: ",
+        "coins": "pièces"
+    },
+    "buy": {
+        "buySucess": "Vous avez acheté cet objet.",
+        "pasPossible": "Vous n'avez pas assez de pièces."
+    },
+    "deposite": {
+        "depositNumber": "Déposez un nombre.",
+        "pasPossible": "Vous n'avez pas assez de pièces pour déposer ce montant.",
+        "deposited": "Vous avez déposé: ",
+        "sucessDeposite": "pièces dans votre banque."
+    },
+    "give": {
+        "mentionPlayer": "Vous devez mentionner un joueur pour lui donner des pièces.",
+        "userDontExistInDB": "Ce joueur n'existe pas dans la base de données.",
+        "depositNumber": "Déposez un nombre.",
+        "playerGivenCoins": "Vous avez donné des pièces à ce joueur! ",
+        "amountOfCoins": "pièces !"
+    },
+    "sell": {
+        "sellSucess": "Vous avez vendu cet objet.",
+        "buyAgain": "Utilisez `prefix`buy {item_ID} si vous voulez racheter cet objet.",
+        "pasPossibleSell": "Vous ne pouvez pas vendre un objet que vous n'avez pas."
+    },
+    "store": {
+        "shopDescription": "Dépensez vos pièces dans le store.",
+        "shopFooter": "Utilisez `prefix`buy {item_ID} pour acheter des objets dans le store."
+    },
+    "withdraw": {
+        "withdrawNumber": "Le montant doit être un nombre entier.",
+        "dontAmountBank": "Vous n'avez pas ce montant sur votre compte",
+        "youWithdrew": "Vous avez retiré ",
+        "ofCoinsInWallet": "de votre banque."
+    },
+    "eightball": {
+        "yes": "Oui.",
+        "no": "Non.",
+        "maybe": "Peut-être.",
+        "miskina": "miskina.",
+        "ptdr": "ptdr",
+        "quelPlaisir": "lmao."
+    },
+    "fakesay": {
+        "provideExistUser": "Veuillez provenir une personne existante.",
+        "mentionBeforeText": "Veuillez mentionner la personne en question avant d'écrire le texte souhaité."
+    },
+    "rps": {
+        "ajouterReactionJouer": "Ajoutez une réaction pour jouer.",
+        "uWin": "Vous avez gagné !",
+        "draw": "Egalité.",
+        "uLost": "Vous avez perdu..."
+    },
+    "help": {
+        "commandNoExist": "Cette commande n'existe pas.",
+        "listOfCommandsDescription": "Une liste de toutes les sous-catégories disponibles et leurs commandes. \nPour plus d'informations sur une commande, tapez `<prefix>help <command name>`",
+        "adminDescription": "Liste de toutes les commandes administrateur.",
+        "funDescription": "Liste de toutes les commandes fun.",
+        "miscDescription": "Liste des commandes accessibles à tous",
+        "modDescription": "Liste de toutes mes commandes accessibles aux modérateurs.",
+        "musicDescription": "Liste de toutes les commandes musicales.",
+        "reeditDescription": "Liste de toutes les commandes meme.",
+        "xpDescription": "Liste de toutes les commandes XP.",
+        "economyDescription": "Liste de toutes les commandes économique."
+    },
+    "poll": {
+        "replyPollWithReact": "Réagissez au sondage :",
+        "pour": "Pour",
+        "neutre": "Neutre",
+        "conte": "Contre",
+        "nePasHesiterARefaireUnSondage": "N'hésitez pas à refaire d'autres sondages !"
+    },
+    "ban": {
+        "noReason": "Aucune raison provenue.",
+        "userNoExist": "Cet utilisateur n'existe pas ou voys avez peut être fait erreur."
+    },
+    "kick": {
+        "noReason": "Aucune raison provenue.",
+        "userNoExist": "Cet utilisateur n'existe pas ou voys avez peut être fait erreur."
+    },
+    "language": {
+        "specify_language": "Please specify a language.",
+        "specify_valid_language": "Please specify an existing language.",
+        "language_updated": "Language updated."
+    },
+    "lockchannel": {
+        "channelLocked": "🔒 | Le salon a été verouillé par "
+    },
+    "mute": {
+        "isMuted": "est mute pour "
+    },
+    "purge": {
+        "specifyNumberBetweenOneAnd100": "Fournissez un nombre entre 1 et 100"
+    },
+    "unloclkchannel": {
+        "unlockedChannel": "🔒 | Le salon a été déverouillé par "
+    },
+    "unmute": {
+        "isNotMuted": "n'est pas mute.",
+        "isUnmuted": "est unmute."
+    },
+    "clip": {
+        "needVocal": "vous devez être dans un channel."
+    },
+    "nowplaying": {
+        "timeRimain": "Temps restant : "
+    },
+    "play": {
+        "needVocal": "vous devez être dans un salon vocal.",
+        "sameVocal": "Vous devez être dans le même salon vocal que ",
+        "urlNoFound": "Rien n'a été trouvé depuis cet url.",
+        "hasBeenAdded": " a été ajouté à la queue par: ",
+        "cantJoin": "Je ne peux rejoindre le salon vocal pour la raison suivante : "
+    },
+    "playlist": {
+        "needVocal": "vous devez être dans un channel.",
+        "sameVocal": "Vous devez être dans le même channel que ",
+        "playlistNotFound": "Playlist non trouvé :(",
+        "playlistTooLong": "La playlist est plus longue que la limite max...",
+        "startedPlaylist": "a démarré la playlist : ",
+        "cantJoin": "Je ne peux rejoindre le salon pour la raison suivante : "
+    },
+    "queue":{
+        "noQueue": "❌ **Rien n'es joué sur ce serveur**",
+        "actualPage": "Page actuelle",
+        "playingNow": "Playing"
+    },
+    "remove": {
+        "noQueue": "❌ **Rien n'es joué sur ce serveur**",
+        "aRetiré": "a retiré ",
+        "fromQueue": " de la queue"
+    },
+    "skipto": {
+        "noQueue": "❌ **Rien n'es joué sur ce serveur**",
+        "onlyQueueNumber": "il n'y a que",
+        "inTheQueue": "sons dans la queue."
+    },
+    "addxp": {
+        "needToTag": "vous devez entrer un nombre ou un @tag.",
+        "vousAvezAjoute": "You successfully added ",
+        "pointsUser": " xp at the user : "
+    },
+    "exp": {
+        "uHave": "Vous avez ",
+	    "xpInStock": " xp !"
+    },
+    "leadreboard": {
+        "top4OfUsers": "Top 4 des utilisateurs sur le serveur"
+    },
+    "level": {
+        "youAreLevel" : "Vous êtes niveau :"
+    },
+    "removexp": {
+        "haveRemoved": "Vous avez retiré",
+        "xpToUser": "xp à l'utilisateur"
+    },
+    "messageEvent": {
+        "noArgs": "Quelques arguments doivent être provenu, ",
+        "howToUse": "Voici comment se servir de la commande : ",
+        "needToTagSomeone": "vous devez tagger quelqu'un.",
+        "cantUseCommandOnUser": "vous ne pouvez pas utiliser cette commande sur cette personne.",
+        "pleaseWait": "veuillez patienter ",
+        "pleaseWaitSeconds": "secondes avant d'utiliser la commande : "
+    },
+    "musicModule": {
+        "queueEnded": "❌ Queue ended.",
+        "leaveVocal": "Quitte le vocal...",
+        "setPause": "a mis la musique sur pause.",
+        "setPlay": "▶ a remis la musique sur play.",
+        "unmute": "a unmute la musique.",
+        "mute": "a mute la musique.",
+        "lowMusic": "a mis le volume sur",
+        "augMusic": "a mis le volume sur",
+        "stopMusic": "a stoppé la musique.",
+        "skip": "a skip la musique.",
+        "playingNow": "Now playing"
+    }
 }

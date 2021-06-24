@@ -2,9 +2,9 @@ const profileModel = require('./../../models/economy');
 
 module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const amount = args[0];
-  if (amount % 1 != 0 || amount <= 0) return message.reply(`${message.guild.language.depositNumber}`)
+  if (amount % 1 != 0 || amount <= 0) return message.reply(`${message.guild.language.deposite.depositNumber}`)
   try {
-    if (amount > economyData.coins) return message.reply(`${message.guild.language.pasPossible}`);
+    if (amount > economyData.coins) return message.reply(`${message.guild.language.deposite.pasPossible}`);
     await profileModel.findOneAndUpdate(
       {
         userID: message.author.id,
@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
         }
       }
     )
-    return message.reply(`${message.guild.language.deposited}` + `${amount} ` + `${message.guild.language.sucessDeposite}`)
+    return message.reply(`${message.guild.language.deposite.deposited}` + `${amount} ` + `${message.guild.language.deposite.sucessDeposite}`)
   } catch (err) {
     console.log(err)
   }

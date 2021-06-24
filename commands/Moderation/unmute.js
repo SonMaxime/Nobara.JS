@@ -4,9 +4,9 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   let user = message.guild.member(message.mentions.users.first());
   let muteRole = message.guild.roles.cache.find(r => r.name === 'muted');
 
-  if (!user.roles.cache.has(muteRole.id)) return message.reply(message.guild.language.isNotMuted);
+  if (!user.roles.cache.has(muteRole.id)) return message.reply(message.guild.language.unmute.isNotMuted);
   user.roles.remove(muteRole.id);
-  message.channel.send(`<@${user.id}> ` + message.guild.language.isUnmuted);
+  message.channel.send(`<@${user.id}> ` + message.guild.language.unmute.isUnmuted);
 };
 
 module.exports.help = {

@@ -21,9 +21,9 @@ module.exports = {
       setTimeout(function () {
         if (queue.connection.dispatcher && message.guild.me.voice.channel) return;
         queue.channel.leave();
-        queue.textChannel.send(message.guild.language.leaveVocal).then(msg => { msg.delete({ timeout: 2000 })}).catch(console.error);
+        queue.textChannel.send(message.guild.language.musicModule.leaveVocal).then(msg => { msg.delete({ timeout: 2000 })}).catch(console.error);
       }, STAY_TIME * 1000);
-      queue.textChannel.send(message.guild.language.queueEnded).then(msg => { msg.delete({ timeout: 2000 })}).catch(console.error);
+      queue.textChannel.send(message.guild.language.musicModule.queueEnded).then(msg => { msg.delete({ timeout: 2000 })}).catch(console.error);
       return message.client.queue.delete(message.guild.id);
     }
 
@@ -76,7 +76,7 @@ module.exports = {
 
     try {
       const playingEmbed = new MessageEmbed()
-      .setTitle(`🎶 ${message.guild.language.playingNow} : **${song.title}**`)
+      .setTitle(`🎶 ${message.guild.language.musicModule.playingNow} : **${song.title}**`)
       .setURL(song.url)
       .setImage(`https://img.youtube.com/vi/` + `${song.id}` + `/0.jpg`)
       var playingMessage = await queue.textChannel.send(playingEmbed);
@@ -106,7 +106,7 @@ module.exports = {
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           queue.connection.dispatcher.end();
-          queue.textChannel.send(`${user} ⏩ a skip le son.`)
+          queue.textChannel.send(`${user} ⏩ ${message.guild.language.musicModule.skip}`)
           .then(msg => {
             msg.delete({ timeout: 3000 })
           })
@@ -120,7 +120,7 @@ module.exports = {
           if (queue.playing) {
             queue.playing = !queue.playing;
             queue.connection.dispatcher.pause(true);
-            queue.textChannel.send(`${user} ⏸ ${message.guild.language.setPause}`)
+            queue.textChannel.send(`${user} ⏸ ${message.guild.language.musicModule.setPause}`)
             .then(msg => {
               msg.delete({ timeout: 3000 })
             })
@@ -128,7 +128,7 @@ module.exports = {
           } else {
             queue.playing = !queue.playing;
             queue.connection.dispatcher.resume();
-            queue.textChannel.send(`${user} ${message.guild.language.setPlay}`)
+            queue.textChannel.send(`${user} ${message.guild.language.musicModule.setPlay}`)
             .then(msg => {
               msg.delete({ timeout: 3000 })
             })
@@ -142,7 +142,7 @@ module.exports = {
           if (queue.volume <= 0) {
             queue.volume = 100;
             queue.connection.dispatcher.setVolumeLogarithmic(100 / 100);
-            queue.textChannel.send(`${user} 🔊 ${message.guild.language.unmute}`)
+            queue.textChannel.send(`${user} 🔊 ${message.guild.language.musicModule.unmute}`)
             .then(msg => {
               msg.delete({ timeout: 3000 })
             })
@@ -150,7 +150,7 @@ module.exports = {
           } else {
             queue.volume = 0;
             queue.connection.dispatcher.setVolumeLogarithmic(0);
-            queue.textChannel.send(`${user} 🔇 ${message.guild.language.mute}`)
+            queue.textChannel.send(`${user} 🔇 ${message.guild.language.musicModule.mute}`)
             .then(msg => {
               msg.delete({ timeout: 3000 })
             })
@@ -165,7 +165,7 @@ module.exports = {
           else queue.volume = queue.volume - 10;
           queue.connection.dispatcher.setVolumeLogarithmic(queue.volume / 100);
           queue.textChannel
-            .send(`${user} 🔉 ${message.guild.language.lowMusic} ${queue.volume}%.`)
+            .send(`${user} 🔉 ${message.guild.language.musicModule.lowMusic} ${queue.volume}%.`)
             .then(msg => {
               msg.delete({ timeout: 3000 })
             })
@@ -179,7 +179,7 @@ module.exports = {
           else queue.volume = queue.volume + 10;
           queue.connection.dispatcher.setVolumeLogarithmic(queue.volume / 100);
           queue.textChannel
-            .send(`${user} 🔊 ${message.guild.language.augMusic} ${queue.volume}%.`)
+            .send(`${user} 🔊 ${message.guild.language.musicModule.augMusic} ${queue.volume}%.`)
             .then(msg => {
               msg.delete({ timeout: 3000 })
             })
@@ -201,7 +201,7 @@ module.exports = {
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return;
           queue.songs = [];
-          queue.textChannel.send(`${user} ⏹ ${message.guild.language.stopMusic}`)
+          queue.textChannel.send(`${user} ⏹ ${message.guild.language.musicModule.stopMusic}`)
           .then(msg => {
             msg.delete({ timeout: 3000 })
           })

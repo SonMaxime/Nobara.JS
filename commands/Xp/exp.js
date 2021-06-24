@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
 
   const userEmbed = new MessageEmbed()
   .setColor('BLACK')
-  .setDescription(message.guild.language.uHave + `${dbUser.experience}` + message.guild.language.xpInStock)
+  .setDescription(message.guild.language.exp.uHave + `${dbUser.experience}` + message.guild.language.exp.xpInStock)
   message.channel.send(userEmbed);
 };
 

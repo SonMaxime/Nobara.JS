@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
   const embed = new MessageEmbed()
   .setColor("#ffffff")
   .setFooter(message.guild.me.displayName, client.user.displayAvatarURL)
-  .setDescription(message.guild.language.ajouterReactionJouer)
+  .setDescription(message.guild.language.rps.ajouterReactionJouer)
   .setTimestamp()
 
   const m = await message.channel.send(embed)
@@ -26,11 +26,11 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     if ((me === "🗻" && clientChosen === "✂") ||
         (me === "📰" && clientChosen === "🗻") ||
         (me === "✂" && clientChosen === "📰")) {
-            return message.guild.language.uWin;
+            return message.guild.language.rps.uWin;
     } else if (me === clientChosen) {
-        return message.guild.language.draw;
+        return message.guild.language.rps.draw;
     } else {
-        return message.guild.language.uLost;
+        return message.guild.language.rps.uLost;
     }
   }
 };

@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 
 module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
-    const replies = [message.guild.language.yes, message.guild.language.no, message.guild.language.maybe, message.guild.language.miskina, message.guild.language.ptdr, message.guild.language.quelPlaisir]
+    const replies = [message.guild.language.eightball.yes, message.guild.language.eightball.no, message.guild.language.eightball.maybe, message.guild.language.eightball.miskina, message.guild.language.ptdr, message.guild.language.eightball.quelPlaisir]
     const question = args.join(" ");
     const responce = Math.floor(Math.random() * replies.length);
 

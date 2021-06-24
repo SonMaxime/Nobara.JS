@@ -1,9 +1,7 @@
-const { MessageEmbed } = require("discord.js");
-
 module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   let user = message.mentions.users.first();
-  let reason = (args.splice(1).join(' ') || message.guild.language.noReason);
-  user ? message.guild.member(user).kick(reason) : message.channel.send(message.guild.language.userNoExist);
+  let reason = (args.splice(1).join(' ') || message.guild.language.kick.noReason);
+  user ? message.guild.member(user).kick(reason) : message.channel.send(message.guild.language.kick.userNoExist);
 };
 
 module.exports.help = {

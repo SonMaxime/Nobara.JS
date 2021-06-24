@@ -1,9 +1,9 @@
 const { MessageEmbed } = require("discord.js");
-const Schema = require('../../models/welcome');
+const Schema = require('../../models/xpchannel');
 
 module.exports.run = (client, message, args, settings, dbUser, economyData) => {
     const channel = message.mentions.channels.first();
-    if (!channel) return message.reply(message.guild.language.setwelcome.welcomeChannelError);
+    if (!channel) return message.reply(message.guild.language.setxpchannel.xpChannelError);
 
     Schema.findOne({ guildID: message.guild.id }, async (err, data) => {
         if (data) {
@@ -15,7 +15,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
                 channelID: channel.id
             }).save();
         }
-        message.reply(message.guild.language.setwelcome.welcomeChannel + ` ${channel}.`)
+        message.reply(message.guild.language.setxpchannel.xpChannel + ` ${channel}.`)
     })
 };
 

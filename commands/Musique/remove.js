@@ -3,7 +3,7 @@ const { canModifyQueue } = require("./../../util/util");
 module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   message.delete();
   const queue = message.client.queue.get(message.guild.id);
-  if (!queue) return message.channel.send(message.guild.language.noQueue).catch(console.error);
+  if (!queue) return message.channel.send(message.guild.language.remove.noQueue).catch(console.error);
   if (!canModifyQueue(message.member)) return;
 
   if (!args.length) return message.reply(`Usage: ${message.client.prefix}remove <Queue Number>`)
@@ -18,7 +18,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   .catch(console.error);
 
   const song = queue.songs.splice(args[0] - 1, 1);
-  queue.textChannel.send(`${message.author} ❌` + message.guild.language.aRetiré +  `**${song[0].title}**` + message.guild.language.fromQueue)
+  queue.textChannel.send(`${message.author} ❌` + message.guild.language.remove.aRetiré +  `**${song[0].title}**` + message.guild.language.remove.fromQueue)
   .then(msg => {
     msg.delete({ timeout: 3000 })
   })

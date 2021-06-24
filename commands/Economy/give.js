@@ -1,23 +1,21 @@
 const profileModel = require('./../../models/economy');
 
 module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
-    if (!args.length) return message.channel.send(message.guild.language.mentionPlayer);
+    if (!args.length) return message.channel.send(message.guild.language.give.mentionPlayer);
 
     const amount = args[0];
     const target = message.mentions.users.first();
 
-    if(!target) message.channel.send(message.guild.language.userDontExist)
+    if(!target) message.channel.send(message.guild.language.give.userDontExist)
 
     if (amount % 1 != 0 || amount <= 0) {
-      return message.channel.send(message.guild.language.depositNumber);
-    } else {
-      return;
-    };
+      return message.channel.send(message.guild.language.give.depositNumber);
+    }
 
     try {
       const targetData = await profileModel.findOne({ userID: target.id });
       if (!targetData) {
-        return message.channel.send(message.guild.language.userDontExistInDB)
+        return message.channel.send(message.guild.language.give.userDontExistInDB)
       } else {
         await profileModel.findOneAndUpdate(
           {
@@ -30,7 +28,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           }
         );
 
-        return message.channel.send(`${message.guild.language.playerGivenCoins}` + `${amount} ` + `${message.guild.language.samountOfCoins}`)
+        return message.channel.send(`${message.guild.language.give.playerGivenCoins}` + `${amount} ` + `${message.guild.language.give.amountOfCoins}`)
       }
     } catch (err) {
       console.log(err)

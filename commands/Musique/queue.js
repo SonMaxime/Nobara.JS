@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
       .catch(console.error);
 
     const queue = message.client.queue.get(message.guild.id);
-    if (!queue) return message.channel.send(message.guild.language.noQueue)
+    if (!queue) return message.channel.send(message.guild.language.queue.noQueue)
     .then(msg => {
       msg.delete({ timeout: 3000 })
     })
@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     const embeds = generateQueueEmbed(message, queue.songs);
 
     const queueEmbed = await message.channel.send(
-      message.guild.language.actualPage + ` - ` + `${currentPage + 1}/${embeds.length}`,
+      message.guild.language.queue.actualPage + ` - ` + `${currentPage + 1}/${embeds.length}`,
       embeds[currentPage]
     );
 
@@ -47,12 +47,12 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
         if (reaction.emoji.name === "➡️") {
           if (currentPage < embeds.length - 1) {
             currentPage++;
-            queueEmbed.edit(message.guild.language.actualPage + ` - ` + `${currentPage + 1}/${embeds.length}`, embeds[currentPage]);
+            queueEmbed.edit(message.guild.language.queue.actualPage + ` - ` + `${currentPage + 1}/${embeds.length}`, embeds[currentPage]);
           }
         } else if (reaction.emoji.name === "⬅️") {
           if (currentPage !== 0) {
             --currentPage;
-            queueEmbed.edit(message.guild.language.actualPage + ` - ` + `${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
+            queueEmbed.edit(message.guild.language.queue.actualPage + ` - ` + `${currentPage + 1}/${embeds.length}**`, embeds[currentPage]);
           }
         } else {
           collector.stop();
@@ -85,7 +85,7 @@ function generateQueueEmbed(message, queue) {
       .setTitle("Song Queue\n")
       .setThumbnail(message.guild.iconURL())
       .setColor("#F8AA2A")
-      .setDescription(message.guild.language.playingNow + `[${queue[0].title}](${queue[0].url})**\n\n${info}`)
+      .setDescription(message.guild.language.queue.playingNow + `[${queue[0].title}](${queue[0].url})**\n\n${info}`)
       .setTimestamp();
     embeds.push(embed);
   }
