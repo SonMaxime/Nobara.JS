@@ -30,25 +30,36 @@ module.exports = async (client, message) => {
   const expToAdd = Math.floor(Math.random() * 25) + 10;
 
   if (expCd >= 8 && expCd <= 11) {
-    await client.addExp(client, message.member, expToAdd);
+    await client.addExp(client, message.member, expToAdd).catch(console.error);
   };
 
   const userLevel = Math.floor(0.04 * Math.sqrt(dbUser.experience));
+  const xpChannelModel = require('../../models/xpchannel');
   const profileModel = require('./../../models/economy');
 
   if (dbUser.level < userLevel) {
-    message.reply(`bravo à toi, tu viens de monter niveau **${userLevel}** ! Incroyable!`);
-    client.updateUser(message.member, { level: userLevel });
-    await profileModel.findOneAndUpdate(
-      {
-          userID: message.author.id
-      },
-      {
-          $inc: {
-              coins: 100
-          },
-      }
-    )
+    xpChannelModel.findOne({ guildID: message.guild.id }, async (err, data) => {
+    if (!data) {
+      return;
+    } else {
+      const user = message.member.user;
+      const channel = message.member.guild.channels.cache.get(data.channelID);
+
+      channel.send(`GG ${user}, tu viens de monter niveau **${userLevel}** ! Incroyable!`)
+
+      client.updateUser(message.member, { level: userLevel });
+      await profileModel.findOneAndUpdate(
+        {
+            userID: message.author.id
+        },
+        {
+            $inc: {
+                coins: 100
+            },
+        }
+      )
+    }
+   });
   };
 
   const economyModel = require('./../../models/economy');

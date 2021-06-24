@@ -20,10 +20,10 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
 };
 
 module.exports.help = {
-  name: "setwelcome",
-  aliases: ['sw'],
+  name: "setxpchannel",
+  aliases: ['sxp'],
   category: 'admin',
-  description: "🇫🇷 Définis un salon de bienvenue. \n🇬🇧 Sets a welcome channel.",
+  description: "🇫🇷 Définis un salon d'xp. \n🇬🇧 Sets a level up channel.",
   cooldown: 10,
   usage: 'channel id',
   isUserAdmin: false,
