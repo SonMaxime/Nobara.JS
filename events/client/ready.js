@@ -1,5 +1,3 @@
-const Dashboard = require("./../../dashboard/dashboard");
-
 module.exports = async (client, message) => {
   console.log(`${client.user.tag} est co`);
 
@@ -25,6 +23,4 @@ module.exports = async (client, message) => {
 
     guild.language = require(`./../../locales/${lang}.json`);
   }
-  
-  Dashboard(client);
 }
