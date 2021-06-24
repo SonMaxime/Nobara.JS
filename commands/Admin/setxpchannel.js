@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const Schema = require('../../models/xpchannel');
+const Schema = require('../../models/guild');
 
 module.exports.run = (client, message, args, settings, dbUser, economyData) => {
     const channel = message.mentions.channels.first();
@@ -7,12 +7,12 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
 
     Schema.findOne({ guildID: message.guild.id }, async (err, data) => {
         if (data) {
-            data.channelID = channel.id;
+            data.xpChannel = channel.id;
             data.save();
         } else {
             new Schema({
                 guildID: message.guild.id,
-                channelID: channel.id
+                xpChannel: channel.id
             }).save();
         }
         message.reply(message.guild.language.setxpchannel.xpChannel + ` ${channel}.`)

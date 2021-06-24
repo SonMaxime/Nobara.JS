@@ -8,7 +8,22 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
         await client.updateGuild(message.guild, { prefix: newSetting });
         return message.channel.send(message.guild.language.configdb.prefix + `: \`${settings.prefix}\`-> \`${newSetting}\``);
       }
-      message.channel.send(message.guild.language.configdb.prefixActual + `: \`${settings.prefix}\``);
+      break;
+    }
+
+    case "welcomeChannel": {
+      if (newSetting) {
+        await client.updateGuild(message.guild, { welcomeChannel: newSetting });
+        return message.channel.send(message.guild.language.configdb.welcomeChannel + `: \`${settings.welcomeChannel}\`-> \`${newSetting}\``);
+      }
+      break;
+    }
+
+    case "xpChannel": {
+      if (newSetting) {
+        await client.updateGuild(message.guild, { xpChannel: newSetting });
+        return message.channel.send(message.guild.language.configdb.xpChannel + `: \`${settings.xpChannel}\`-> \`${newSetting}\``);
+      }
       break;
     }
   }

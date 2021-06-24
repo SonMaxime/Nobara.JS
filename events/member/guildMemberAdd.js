@@ -1,5 +1,5 @@
 const { MessageAttachment } = require("discord.js");
-const Welcome = require('./../../models/welcome');
+const Welcome = require('./../../models/guild');
 const Canvas = require('canvas');
 const path = require('path');
 
@@ -57,7 +57,7 @@ module.exports = async (client, member) => {
       return;
     } else {
       const user = member.user;
-      const channel = member.guild.channels.cache.get(data.channelID);
+      const channel = member.guild.channels.cache.get(data.welcomeChannel);
 
       channel.send(`Welcome ${user}`, attachment)
     }

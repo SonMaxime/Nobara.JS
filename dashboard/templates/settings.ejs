@@ -1,0 +1,30 @@
+<%- include("partials/header", { bot, user, path, title: `Settings | ${guild.name}` }) %>
+
+<div class="container-sm center" style="margin-top: 30px;">
+  <div class="d-grid gap-2 col-4 mx-auto">
+    <% if (alert) { %>
+      <div class="alert alert-success" role="alert">
+        <%= alert %>
+      </div>
+    <% } %>
+    <h1><%= guild.name %></h1>
+    <hr>
+    <form method="POST">
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Prefix:</p>
+      <p style="font-style: italic;" class="disabled">The prefix that is added to discord messages in order to invoke commands.</p>
+      <input type="text" class="form-control" name="prefix" value="<%= settings.prefix %>" placeholder="You're prefix.">
+
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Welcome channel:</p>
+      <p style="font-style: italic;" class="disabled">The welcome channel is the ID of the channel where all you're members will be welcomed.</p>
+      <input type="text" class="form-control" name="welcomeChannel" value="<%= settings.welcomeChannel %>" placeholder="You're welcome channel ID.">
+
+      <p class="h5" style="margin-bottom: 0.5rem; margin-top: 10px;">Level UP channel:</p>
+      <p style="font-style: italic;" class="disabled">The Level UP channel is the ID of the channel where all you're members will be GG'd.</p>
+      <input type="text" class="form-control" name="xpChannel" value="<%= settings.xpChannel %>" placeholder="You're Level UP channel ID.">
+
+      <br><button type="submit" class="btn btn-secondary text-white">Save Settings</button>
+    </form>
+  </div>
+</div>
+
+<%- include("partials/footer") %>

@@ -1,7 +1,8 @@
 {
     "configdb": {
         "prefix": "Prefix mis à jour ",
-        "prefixActual": "Préfix actuel "
+        "welcomeChannel": "Welcome channel updated: ",
+        "xpChannel": "Level UP channel updated: "
     },
     "reload": {
         "restartBot": "Reloading."
