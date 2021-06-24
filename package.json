@@ -1,6 +1,6 @@
 {
   "name": "nobara.js",
-  "version": "1.1.2",
+  "version": "1.2.3",
   "description": "Bot qui vient définitivement remplacer Horizon, un projet abandonné.",
   "main": "index.js",
   "scripts": {
