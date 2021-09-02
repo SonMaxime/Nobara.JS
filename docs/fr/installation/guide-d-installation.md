@@ -1,6 +1,6 @@
 # Installation Guide
 
-## Before you begin
+## Avant de commencer
 
 **1.** Faites attention à avoir [Node.js](https://nodejs.org/en/download/) dans la version 14 et/ou ultérieur.
 
@@ -11,7 +11,7 @@
 
 ## Fill config.js file
 
-Make sure to remove the `.example` extention from the `config.js.example` file.
+Faites attention à retirer l'extention `.example` du fichier `config.js.example`.
 
 ```
 module.exports = {
@@ -36,12 +36,12 @@ module.exports = {
 Node
  - `node .`
 
-PM2 (optional if u run the bot on a VPS)
+PM2 (optionnel si vous hébergez votre bot)
  - `npm install pm2 -g`
  - `pm2 start index.js`
 
-Nodemon (to auto restart the bot when a modification is made)
+Nodemon (pour redémarrer le bot automatiquement en cas de changement dans le programme)
  - `npm install nodemon -g`
  - `nodemon index.js`
  
- > If there's an error or something else, please refer u to the common-errors.md file in the same folder.
+ > Si vous avez des problèmes pendant/après votre installation, référez vous au fichier `erreures-communes.md`
