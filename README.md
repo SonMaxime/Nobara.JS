@@ -33,8 +33,8 @@ Nobara.JS © SonMaxime
 Authored and maintained by SonMaxime  
 
 > GitHub [**@SonMaxime**], 
-> Twitter [**@SonMaxime_**], 
-> Discord **const dev = require('SonMaxime')#9355**  
+> Twitter [**@SonMaximeAPX_**], 
+> Discord **Lieutenant SonMaxime de Friterie#9552**  
 
 # Invitation :
 
