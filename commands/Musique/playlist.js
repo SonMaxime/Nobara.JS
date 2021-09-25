@@ -1,9 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const { play } = require('../../util/play');
-const YouTubeAPI = require("simple-youtube-api");
 const scdl = require("soundcloud-downloader").default;
 const { YOUTUBE_API_KEY, SOUNDCLOUD_CLIENT_ID, MAX_PLAYLIST_SIZE, DEFAULT_VOLUME } = require("./../../util/util");
-const youtube = new YouTubeAPI("AIzaSyAhPLtjqee-H0lINdBEP5a_2rO6UuRtICM");
 
 module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
   const { channel } = message.member.voice;
@@ -36,11 +34,6 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     })
     .catch(console.error);
 
-  const search = args.join(" ");
-  const pattern = /^.*(youtu.be\/|list=)([^#\&\?]*).*/gi;
-  const url = args[0];
-  const urlValid = pattern.test(args[0]);
-
   const queueConstruct = {
     textChannel: message.channel,
     channel,
@@ -54,41 +47,19 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
   let playlist = null;
   let videos = [];
 
-  if (urlValid) {
-    try {
-      playlist = await youtube.getPlaylist(url, { part: "snippet" });
-      videos = await playlist.getVideos(MAX_PLAYLIST_SIZE || 10, { part: "snippet" });
-    } catch (error) {
-      console.error(error);
-      return message.reply(message.guild.language.playlist.playlistNotFound)
-      .then(msg => {
-        msg.delete({ timeout: 3000 })
-      })
-      .catch(console.error);
-    }
-  } else if (scdl.isValidUrl(args[0])) {
-    if (args[0].includes("/sets/")) {
-      message.channel.send("⌛ fetching the playlist...")
-      .then(msg => {
-        msg.delete({ timeout: 3000 })
-      })
-      .catch(console.error);
-      playlist = await scdl.getSetInfo(args[0], SOUNDCLOUD_CLIENT_ID);
-      videos = playlist.tracks.map((track) => ({
-        title: track.title,
-        url: track.permalink_url,
-        duration: track.duration / 1000
-      }));
-    }
-  } else {
-    try {
-      const results = await youtube.searchPlaylists(search, 1, { part: "snippet" });
-      playlist = results[0];
-      videos = await playlist.getVideos(MAX_PLAYLIST_SIZE || 10, { part: "snippet" });
-    } catch (error) {
-      console.error(error);
-      return message.reply(error.message).catch(console.error);
-    }
+  if (scdl.isValidUrl(args[0])) {
+      if (args[0].includes("/sets/")) {
+          message.channel.send("⌛ fetching the playlist...")
+          .then( msg => {
+              msg.delete({ timeout: 3000 })
+          })
+          .catch(console.error);
+          playlist = playlist.tracks.map((track) => ({
+              title: track.title,
+              url: track.permalink_url,
+              duration: track.duration / 100
+          }));
+      }
   }
 
   const newSongs = videos.map((video) => {

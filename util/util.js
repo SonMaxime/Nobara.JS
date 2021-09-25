@@ -20,7 +20,6 @@ try {
 
 exports.TOKEN = config ? config.TOKEN : process.env.TOKEN;
 exports.prefix = config ? config.prefix : process.env.prefix;
-exports.YOUTUBE_API_KEY = config ? config.YOUTUBE_API_KEY : process.env.YOUTUBE_API_KEY;
 exports.SOUNDCLOUD_CLIENT_ID = config ? config.SOUNDCLOUD_CLIENT_ID : process.env.SOUNDCLOUD_CLIENT_ID;
 exports.MAX_PLAYLIST_SIZE = config ? config.MAX_PLAYLIST_SIZE : process.env.MAX_PLAYLIST_SIZE;
 exports.PRUNING = config ? config.PRUNING : process.env.PRUNING;

@@ -1,12 +1,9 @@
 const { play } = require('../../util/play');
-const ytdl = require("ytdl-core");
-const YouTubeAPI = require("simple-youtube-api");
 const scdl = require("soundcloud-downloader").default;
 const https = require("https");
 const { SOUNDCLOUD_CLIENT_ID, DEFAULT_VOLUME } = require("./../../util/util");
-const youtube = new YouTubeAPI("AIzaSyAhPLtjqee-H0lINdBEP5a_2rO6UuRtICM");
 
-module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
+module.exports.run = async (client, message, args) => {
   message.delete();
   const { channel } = message.member.voice;
 
@@ -37,18 +34,13 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     })
     .catch(console.error);
 
-  const search = args.join(" ");
-  const videoPattern = /^(https?:\/\/)?(www\.)?(m\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
-  const playlistPattern = /^.*(list=)([^#\&\?]*).*/gi;
   const scRegex = /^https?:\/\/(soundcloud\.com)\/(.*)$/;
   const mobileScRegex = /^https?:\/\/(soundcloud\.app\.goo\.gl)\/(.*)$/;
   const url = args[0];
   const urlValid = videoPattern.test(args[0]);
 
-  if (!videoPattern.test(args[0]) && playlistPattern.test(args[0])) {
-    return message.client.commands.get("playlist").run(client, message, args);
-  } else if (scdl.isValidUrl(url) && url.includes("/sets/")) {
-    return message.client.commands.get("playlist").run(client, message, args);
+  if (scdl.isValidUrl(url) && url.includes("/sets/")) {
+    return message.client.commands.get("playlist").run(client, message, args)
   }
 
   if (mobileScRegex.test(url)) {
@@ -85,22 +77,10 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     playing: true
   };
 
-  let songInfo = null;
   let song = null;
 
   if (urlValid) {
-    try {
-      songInfo = await ytdl.getInfo(url);
-      song = {
-        title: songInfo.videoDetails.title,
-        id: songInfo.videoDetails.videoId,
-        url: songInfo.videoDetails.video_url,
-        duration: songInfo.videoDetails.lengthSeconds
-      };
-    } catch (error) {
-      console.error(error);
-      return message.reply(error.message).catch(console.error);
-    }
+    return;
   } else if (scRegex.test(url)) {
     try {
       const trackInfo = await scdl.getInfo(url, SOUNDCLOUD_CLIENT_ID);
@@ -108,20 +88,6 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
         title: trackInfo.title,
         url: trackInfo.permalink_url,
         duration: Math.ceil(trackInfo.duration / 1000)
-      };
-    } catch (error) {
-      console.error(error);
-      return message.reply(error.message).catch(console.error);
-    }
-  } else {
-    try {
-      const results = await youtube.searchVideos(search, 1);
-      songInfo = await ytdl.getInfo(results[0].url);
-      song = {
-        title: songInfo.videoDetails.title,
-        url: songInfo.videoDetails.video_url,
-        id: songInfo.videoDetails.videoId,
-        duration: songInfo.videoDetails.lengthSeconds
       };
     } catch (error) {
       console.error(error);
@@ -161,9 +127,9 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
 module.exports.help = {
   name: "play",
   aliases: ['p'],
-  description: "🇫🇷 Joue un son depuis YouTube ou Soundcloud. \n🇬🇧 Play a song from YT or SoundCloud.",
+  description: "🇫🇷 Joue un son depuis Soundcloud. \n🇬🇧 Play a song from SoundCloud.",
   cooldown: 3,
-  usage: '<YouTube URL | Nom de la video | Soundcloud URL>',
+  usage: '<Soundcloud URL>',
   isUserAdmin: false,
   permissions: false,
   args: true

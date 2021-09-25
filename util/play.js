@@ -28,17 +28,13 @@ module.exports = {
     }
 
     let stream = null;
-    let streamType = song.url.includes("youtube.com") ? "opus" : "ogg/opus";
 
     try {
-      if (song.url.includes("youtube.com")) {
-        stream = await ytdl(song.url, { highWaterMark: 1 << 25 });
-      } else if (song.url.includes("soundcloud.com")) {
+      if (song.url.includes("soundcloud.com")) {
         try {
           stream = await scdl.downloadFormat(song.url, scdl.FORMATS.OPUS, SOUNDCLOUD_CLIENT_ID);
         } catch (error) {
-          stream = await scdl.downloadFormat(song.url, scdl.FORMATS.MP3, SOUNDCLOUD_CLIENT_ID);
-          streamType = "unknown";
+          console.error(error);
         }
       }
     } catch (error) {
@@ -47,7 +43,7 @@ module.exports = {
         module.exports.play(queue.songs[0], message);
       }
 
-      console.error(error);
+      console.catch(error);
       return message.channel.send(`Error: ${error.message ? error.message : error}`);
     }
 

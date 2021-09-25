@@ -51,7 +51,6 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           .addFields(
             {name: "`nowplaying` :", value: `${npcommand.help.description}`},
             {name: "`play` : ", value: `${playcommand.help.description}`},
-            {name: "`playlist` :", value: `${playlistcommand.help.description}`},
             {name: "`queue` : ", value: `${queuecommand.help.description}`},
             {name: "`remove` : ", value: `${removecommand.help.description}`},
             {name: "`skipto` : ", value: `${skiptocommand.help.description}`},
