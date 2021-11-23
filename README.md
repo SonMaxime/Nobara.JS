@@ -5,7 +5,7 @@
 
 <p>
   <a href="https://twitter.com/SonMaxime_" target="_blank">
-    <img alt="Twitter: SonMaxime" src="https://img.shields.io/twitter/follow/sonmaxime_.svg?style=social" />
+    <img alt="Twitter: 444sonmaxime" src="https://img.shields.io/twitter/follow/444sonmaxime.svg?style=social" />
   </a>
 </p>
 
