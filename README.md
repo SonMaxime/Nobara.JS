@@ -33,7 +33,7 @@ Nobara.JS © SonMaxime
 Authored and maintained by SonMaxime  
 
 > GitHub [**@SonMaxime**], 
-> Twitter [**@SonMaximeAPX_**], 
+> Twitter [**@444SonMaxime_**], 
 > Discord **Lieutenant SonMaxime de Friterie#9552**  
 
 # Invitation :
