@@ -41,7 +41,7 @@ module.exports.run = async (bot, message, args) => {
 
             .setColor("0x#FF0000")
             .setFooter(`Vote kick by SonMaxime`);
-  await message.channel.send({embed: votekick});
+  await message.channel.send({ embeds: [votekick, embed2] });
 
   if(YES_Count >= 5 && YES_Count > NO_Count){
 

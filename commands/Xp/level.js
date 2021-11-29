@@ -7,7 +7,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   .setDescription(message.guild.language.level.youAreLevel + ` ${dbUser.level}.`)
   .setFooter(`Level Discord via cloud.mongodb.com`, message.author.displayAvatarURL())
 
-  message.channel.send(embed)
+  message.channel.send({ embeds: [embed] })
 };
 
 module.exports.help = {

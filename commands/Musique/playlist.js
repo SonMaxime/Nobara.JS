@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
   const { channel } = message.member.voice;
   const serverQueue = message.client.queue.get(message.guild.id);
 
-  if (!channel) return message.reply(message.guild.language.playlist.needVocal)
+  if (!channel) return message.reply({ content: message.guild.language.playlist.needVocal, allowedMentions: { repliedUser: true }})
   .then(msg => {
     msg.delete(3000)
   })
@@ -28,7 +28,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     .catch(console.error);
 
   if (serverQueue && channel !== message.guild.me.voice.channel)
-    return message.reply(message.guild.language.playlist.sameVocal + `${message.client.user}`)
+    return message.reply({ content: message.guild.language.playlist.sameVocal + `${message.client.user}`, allowedMentions: { repliedUser: true }})
     .then(msg => {
       msg.delete({ timeout: 3000 })
     })

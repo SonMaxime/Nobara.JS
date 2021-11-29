@@ -15,7 +15,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
       { name: 'Support', value: `[Server Invite](https://discord.gg/78M3hSt)`, inline: true }
     );
 
-		message.channel.send(embed);
+		message.channel.send({ embeds: [embed] });
 };
 
 module.exports.help = {

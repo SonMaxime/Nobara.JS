@@ -9,7 +9,7 @@ module.exports = async (client, message) => {
   ]
   function setStatus(){
     let randomStatus = status[Math.floor(Math.random()*status.length)]
-    client.user.setPresence({activity: randomStatus});
+    client.user.setPresence({ activity: randomStatus });
   }
   setStatus();
   setInterval(() => setStatus(), 300000)

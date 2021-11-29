@@ -18,7 +18,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
     .catch(console.error);
     if (!canModifyQueue(message.member)) return;
     if (args[0] > queue.songs.length)
-      return message.reply(message.guild.language.skipto.onlyQueueNumber + ` ${queue.songs.length} ` + message.guild.language.skipto.inTheQueue)
+      return message.reply({ content: message.guild.language.skipto.onlyQueueNumber + ` ${queue.songs.length} ` + message.guild.language.skipto.inTheQueue, allowedMnetions: { repliedUser: true}})
       .then(msg => {
         msg.delete({ timeout: 3000 })
       })

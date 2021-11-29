@@ -192,5 +192,8 @@
         "stopMusic": "a stoppé la musique.",
         "skip": "a skip la musique.",
         "playingNow": "Now playing"
+    },
+    "tts": {
+        "noPossiblo": "No possiblo, une musique est cours de lecture"
     }
 }

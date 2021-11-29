@@ -23,7 +23,7 @@ module.exports = async (client, message) => {
  }
 
   if(message.content ===`<@!${message.client.user.id}>` || message.content ===`<@${message.client.user.id}>`){
-  return message.reply(`Uh-Oh! You forgot the prefix? It's \`${settings.prefix}\``);;
+  return message.reply({ content:`Uh-Oh! You forgot the prefix? It's \`${settings.prefix}\``, allowedMentions: { repliedUser: true }});;
  }
 
   const expCd = Math.floor(Math.random() * 19) + 1;
@@ -89,7 +89,7 @@ module.exports = async (client, message) => {
   const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.help.aliases && cmd.help.aliases.includes(commandName));
   if (!command) return;
 
-  if (command.help.permissions && !message.member.hasPermission('BAN_MEMBERS')) return message.reply(message.guild.language.noPermToUse);
+  if (command.help.permissions && !message.member.hasPermission('BAN_MEMBERS')) return message.reply({content: message.guild.language.noPermToUse, allowedMentions: { repliedUser: true }});
 
   if (command.help.args && !args.length) {
     let noArgsReply = message.guild.language.messageEvent.noArgs + `${message.author}!`;
@@ -101,7 +101,7 @@ module.exports = async (client, message) => {
 
   if (command.help.isUserAdmin && !user) return message.reply(message.guild.language.messageEvent.needToTagSomeone);
 
-  if (command.help.isUserAdmin && message.guild.member(user).hasPermission('BAN_MEMBERS')) return message.reply(message.guild.language.messageEvent.cantUseCommandOnUser);
+  if (command.help.isUserAdmin && message.guild.member(user).hasPermission('BAN_MEMBERS')) return message.reply({ content: message.guild.language.messageEvent.cantUseCommandOnUser, allowedMentions: { repliedUser: true }});
 
   if (!client.cooldowns.has(command.help.name)) {
     client.cooldowns.set(command.help.name, new Collection());
@@ -116,7 +116,7 @@ module.exports = async (client, message) => {
 
     if (timeNow < cdExpirationTime) {
       timeLeft = (cdExpirationTime - timeNow) / 1000;
-      return message.reply(`${message.guild.language.messageEvent.pleaseWait} ${timeLeft.toFixed(0)} ${message.guild.language.messageEvent.pleaseWaitSeconds} \`${command.help.name}\`.`);
+      return message.reply({ content: `${message.guild.language.messageEvent.pleaseWait} ${timeLeft.toFixed(0)} ${message.guild.language.messageEvent.pleaseWaitSeconds} \`${command.help.name}\`.`, allowedMentions: { repliedUser: true }});
     }
   }
 

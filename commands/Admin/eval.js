@@ -4,8 +4,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
       return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
     return text;
   }
-
-  if (message.author.id !== "492402867953467392") return;
+  
   const code = args.join(" ");
   const evaled = eval(code);
   const cleanCode = await clean(evaled);

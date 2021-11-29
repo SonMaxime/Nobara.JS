@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
         .setTitle(`de /r/${random}`)
         .setURL(`https://reddit.com/r/${random}`);
 
-    message.channel.send(embed);
+    message.channel.send({ embeds: [embed] });
 }
 
 module.exports.help = {

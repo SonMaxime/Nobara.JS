@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     .setTimestamp()
     .setFooter(message.guild.language.poll.nePasHesiterARefaireUnSondage)
 
-  const poll = await message.channel.send(embed);
+  const poll = await message.channel.send({ embeds: [embed, embed2] });
   await poll.react("🟩");
   await poll.react("🟦");
   await poll.react("🟥");

@@ -6,7 +6,7 @@ module.exports.help = {
     name: "sim",
     aliases: [''],
     category: 'admin',
-    description: "",
+    description: "simule la creation de personnes dans le serveur mais t'es pas sencé savoir ce que c'est",
     cooldown: 0,
     isUserAdmin: false,
     permissions: false,

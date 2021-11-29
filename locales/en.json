@@ -192,5 +192,8 @@
         "stopMusic": "has stoped the music.",
         "skip": "has skipped the music.",
         "playingNow": "Now playing"
+    },
+    "tts": {
+        "noPossiblo": "No possiblo, a music is already playing."
     }
 }

@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     .setColor("#36393F")
     .addField(question, replies[responce])
 
-    message.channel.send(embed)
+    message.channel.send({ embeds: [embed] });
 };
 
 module.exports.help = {

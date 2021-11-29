@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
             { name: 'xp', inline: true }
           )
 
-          message.channel.send(embed)
+          message.channel.send({ embeds: [embed, embed2] });
         } else {
           queueConstruct.connection = await channel.join();
           const dispatcher = queueConstruct.connection

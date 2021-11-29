@@ -4,7 +4,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
      const embed = new MessageEmbed()
      .setColor('BLACK')
      .setDescription(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
-     message.channel.send(embed);
+     message.channel.send({ embeds: [embed, embed2] });
 }
 
 module.exports.help = {

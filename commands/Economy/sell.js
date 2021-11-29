@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
       const cookiePrice = 250;
       const cookieAmount = 1;
       if (economyData.cookie < cookieAmount) {
-          return message.reply(message.guild.language.sell.pasPossibleSell)
+          return message.reply({ content: message.guild.language.sell.pasPossibleSell, allowedMentions: { repliedUser: true }})
       } else {
         await profileModel.findOneAndUpdate(
               {
@@ -25,13 +25,13 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                   },
               },
           )
-        return message.channel.send(embed)
+        return message.channel.send({ embeds: [embed] });
       }
   } else if (item === 'fish') {
       const fishPrice = 300;
       const fishAmount = 1;
       if (economyData.fish < fishAmount) {
-        return message.reply(message.guild.language.sell.pasPossibleSell)
+        return message.reply({ content: message.guild.language.sell.pasPossibleSell, allowedMentions: { repliedUser: true }})
       } else {
         await profileModel.findOneAndUpdate(
               {
@@ -51,7 +51,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           const carPrice = 1000;
           const carAmount = 1;
           if (economyData.car < carAmount) {
-            return message.reply(message.guild.language.sell.pasPossibleSell)
+            return message.reply({ content: message.guild.language.sell.pasPossibleSell, allowedMentions: { repliedUser: true }})
           } else {
               await profileModel.findOneAndUpdate(
                   {
@@ -71,7 +71,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
               const bookPrice = 150;
               const bookAmount = 1;
               if (economyData.book < bookAmount) {
-                return message.reply(message.guild.language.sell.pasPossibleSell)
+                return message.reply({ content: message.guild.language.sell.pasPossibleSell, allowedMentions: { repliedUser: true }})
               } else {
                   await profileModel.findOneAndUpdate(
                       {
@@ -91,7 +91,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                   const pcPrice = 700;
                   const pcAmount = 1;
                   if (economyData.computer < pcAmount) {
-                    return message.reply(message.guild.language.sell.pasPossibleSell)
+                    return message.reply({ content: message.guild.language.sell.pasPossibleSell, allowedMentions: { repliedUser: true }})
                   } else {
                       await profileModel.findOneAndUpdate(
                           {

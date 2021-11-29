@@ -15,7 +15,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
                 xpChannel: channel.id
             }).save();
         }
-        message.reply(message.guild.language.setxpchannel.xpChannel + ` ${channel}.`)
+        message.reply({ content: message.guild.language.setxpchannel.xpChannel + ` ${channel}.`, allowedMentions: { repliedUser: true }})
     })
 };
 

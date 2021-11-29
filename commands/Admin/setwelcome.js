@@ -15,7 +15,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
                 welcomeChannel: channel.id
             }).save();
         }
-        message.reply(message.guild.language.setwelcome.welcomeChannel + ` ${channel}.`)
+        message.reply({ content: message.guild.language.setwelcome.welcomeChannel + ` ${channel}.`, allowedMentions: { repliedUser: true }})
     })
 };
 

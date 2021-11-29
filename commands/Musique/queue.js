@@ -20,10 +20,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     let currentPage = 0;
     const embeds = generateQueueEmbed(message, queue.songs);
 
-    const queueEmbed = await message.channel.send(
-      message.guild.language.queue.actualPage + ` - ` + `${currentPage + 1}/${embeds.length}`,
-      embeds[currentPage]
-    );
+    const queueEmbed = await message.channel.send({ content: message.guild.language.queue.actualPage + ` - ` + `${currentPage + 1}/${embeds.length}`, embeds: [embeds[currentPage]] });
 
     try {
       await queueEmbed.react("⬅️");

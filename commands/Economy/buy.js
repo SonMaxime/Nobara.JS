@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
   if (item === 'cookie') {
       const cookiePrice = 250;
       if (economyData.coins < cookiePrice) {
-          return message.reply(message.guild.language.buy.pasPossible)
+          return message.reply({ content: message.guild.language.buy.pasPossible , allowedMention: { repliedUser: true }})
       } else {
         await profileModel.findOneAndUpdate(
               {
@@ -23,12 +23,12 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                   },
               },
           )
-        return message.channel.send(embed)
+        return message.channel.send({ embeds: [embed] });
       }
   } else if (item === 'fish') {
       const fishPrice = 300;
       if (economyData.coins < fishPrice) {
-        return message.reply(message.guild.language.buy.pasPossible)
+        return message.reply({ content: message.guild.language.buy.pasPossible, allowedMention: { repliedUser: true }})
       } else {
         await profileModel.findOneAndUpdate(
               {
@@ -45,13 +45,13 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                   },
               },
           )
-        return message.channel.send(embed)
+        return message.channel.send({ embeds: [embed] });
       }
   } else {
       if (item === 'car') {
           const carPrice = 1000;
           if (economyData.coins < carPrice) {
-            return message.reply(message.guild.language.buy.pasPossible)
+            return message.reply({ content: message.guild.language.buy.pasPossible, allowedMention: { repliedUser: true }})
           } else {
               await profileModel.findOneAndUpdate(
                   {
@@ -68,13 +68,13 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                       },
                   },
               )
-              return message.channel.send(embed)
+              return message.channel.send({ embeds: [embed] });
           }
       } else {
           if (item === 'book') {
               const bookPrice = 150;
               if (economyData.coins < bookPrice) {
-                return message.reply(message.guild.language.buy.pasPossible)
+                return message.reply({ content: message.guild.language.buy.pasPossible, allowedMention: { repliedUser: true }})
               } else {
                   await profileModel.findOneAndUpdate(
                       {
@@ -91,13 +91,13 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                           }
                       }
                   )
-                  return message.channel.send(embed)
+                  return message.channel.send({ embeds: [embed] });
               }
           } else {
               if (item === 'pc') {
                   const pcPrice = 700;
                   if (economyData.coins < pcPrice) {
-                    return message.reply(message.guild.language.buy.pasPossible)
+                    return message.reply({ content: message.guild.language.buy.pasPossible, allowedMention: { repliedUser: true }})
                   } else {
                       await profileModel.findOneAndUpdate(
                           {
@@ -114,7 +114,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
                               },
                           },
                       )
-                      return message.channel.send(embed)
+                      return message.channel.send({ embeds: [embed] });
                   }
               }
           }

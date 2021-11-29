@@ -1,14 +1,7 @@
 const { Client, Collection } = require('discord.js');
 const { loadCommands, loadEvents } = require("./util/loader");
 const { Database } = require("bookman");
-const client = new Client({ 
-    partials: ['MESSAGE', 'CHANNEL', 'REACTION'], 
-    restTimeOffset: 0,
-    messageCacheMaxSize: 200, 
-    messageCacheLifetime: 604800, 
-    messageSweepInterval: 604800, 
-    disableEveryone: true
-});
+const client = new Client({ intents: ['GUILDS', 'GUILD_MEMBERS', 'GUILD_MESSAGES', 'GUILD_INVITES'], restTimeOffset: 0, disableEveryone: true});
 
 require("./util/functions")(client);
 client.config = require("./config");

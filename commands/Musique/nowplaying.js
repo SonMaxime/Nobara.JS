@@ -29,7 +29,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
       nowPlaying.setFooter(message.guild.language.nowplaying.timeRimain + new Date(left * 1000).toISOString().substr(11, 8));
     }
 
-    return message.channel.send(nowPlaying)
+    return message.channel.send({ embeds: [nowPlaying] })
     .then(msg => {
       msg.delete({ timeout: 5500 })
     })

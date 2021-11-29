@@ -7,11 +7,11 @@ module.exports.run = async (client, message, args, settings, dbUser) => {
   const embed = new MessageEmbed()
   .setTitle(`${message.author.username}'s Balance`)
   .addFields(
-    { name: 'Coins:', value: `${economyData.coins}`, inline: true },
+    { name: 'Coins/Tokens:', value: `${economyData.coins}`, inline: true },
     { name: 'Bank:', value: `${economyData.bank}`, inline: true }
   )
 
-  var reactionMessage = await message.channel.send(embed)
+  var reactionMessage = await message.channel.send({ embeds: [embed] });
   await reactionMessage.react("💸");
   await reactionMessage.react("🎮");
   await reactionMessage.react("⏹");

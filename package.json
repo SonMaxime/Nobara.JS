@@ -21,7 +21,7 @@
     "bookman": "^3.1.0",
     "canvas": "^2.8.0",
     "discord-tts-fr": "^1.0.3",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.2.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",

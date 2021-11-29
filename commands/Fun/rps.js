@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
   .setDescription(message.guild.language.rps.ajouterReactionJouer)
   .setTimestamp()
 
-  const m = await message.channel.send(embed)
+  const m = await message.channel.send({ embeds: [embed] });
   const reacted = await promptMessage(m, message.author, 30, chooseArr);
 
   const choixDuBot = chooseArr[Math.floor(Math.random() * chooseArr.length)];

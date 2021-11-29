@@ -1,12 +1,12 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = async (client, message, args, settings, dbUser, economyData) => {
+module.exports.run = async (message, dbUser) => {
   const user = message.guild.member(message.mentions.users.first());
 
   const userEmbed = new MessageEmbed()
   .setColor('BLACK')
   .setDescription(message.guild.language.exp.uHave + `${dbUser.experience}` + message.guild.language.exp.xpInStock)
-  message.channel.send(userEmbed);
+  message.channel.send({ embeds: [userEmbed] });
 };
 
 module.exports.help = {

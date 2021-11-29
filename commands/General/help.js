@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
       {name: ":crossed_swords: `XP` : ", value: `${message.guild.language.help.xpDescription}`},
       {name: ":money_with_wings: `Economy` : ", value: `${message.guild.language.help.economyDescription}`}
     )
-    var reactionMessage = await message.channel.send(menuEmbed)
+    var reactionMessage = await message.channel.send({ embeds: [menuEmbed] });
     await reactionMessage.react("⚙️");
     await reactionMessage.react("🎮");
     await reactionMessage.react("💭");
@@ -29,9 +29,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     await reactionMessage.react("⏹");
 
     const filter = (reaction, user) => user.id !== message.client.user.id;
-    var collector = reactionMessage.createReactionCollector(filter, {
-      time: 600000
-    });
+    var collector = reactionMessage.createReactionCollector({ filter, time: 600000 });
 
     collector.on("collect", (reaction, user) => {
       const member = message.guild.member(user);
@@ -51,6 +49,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
           .addFields(
             {name: "`nowplaying` :", value: `${npcommand.help.description}`},
             {name: "`play` : ", value: `${playcommand.help.description}`},
+            {name: "`playlist` : ", value: `${playlistcommand.help.description}`},
             {name: "`queue` : ", value: `${queuecommand.help.description}`},
             {name: "`remove` : ", value: `${removecommand.help.description}`},
             {name: "`skipto` : ", value: `${skiptocommand.help.description}`},

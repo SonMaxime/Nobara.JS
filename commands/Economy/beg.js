@@ -18,7 +18,8 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     console.log(err)
   }
 
-  return message.reply(`${message.guild.language.begged}` + `${randomNumber} ` + `${message.guild.language.coins}.`)
+  return message.reply({ content: `${message.guild.language.begged}` + `${randomNumber} ` + `${message.guild.language.coins}.`, allowedMentions: { repliedUser: true }})
+
 };
 
 module.exports.help = {

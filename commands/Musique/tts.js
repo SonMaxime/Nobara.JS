@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     const queue = message.client.queue.get(message.guild.id);
     if (queue) {
         message.delete();
-        return message.reply('No possiblo, une musique est cours de lecture.').then(msg => { msg.delete({ timeout: 3000 }) })
+        return message.reply(message.guild.language.tts.noPossiblo).then(msg => { msg.delete({ timeout: 3000 }) })
     } else {
         message.delete();
         const broadcast = client.voice.createBroadcast();

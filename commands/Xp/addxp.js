@@ -8,7 +8,7 @@ module.exports.run = (client, message, args, settings, dbUser, economyData) => {
   const addEmbed = new MessageEmbed()
   .setColor('BLACK')
   .setDescription(message.guild.language.addxp.vousAvezAjoute + ` ${expToAdd} ` + message.guild.language.addxp.pointsUser + `${user}!`)
-  message.channel.send(addEmbed);
+  message.channel.send({ embeds: [addEmbed] });
 };
 
 module.exports.help = {

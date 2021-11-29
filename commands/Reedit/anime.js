@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
     .setImage(img.url)
     .setFooter('API by r/animemes');
 
-  message.channel.send(embed);
+  message.channel.send({ embeds: [embed] });
 };
 
 module.exports.help = {

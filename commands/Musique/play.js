@@ -8,13 +8,13 @@ module.exports.run = async (client, message, args) => {
   const { channel } = message.member.voice;
 
   const serverQueue = message.client.queue.get(message.guild.id);
-  if (!channel) return message.reply(message.guild.language.play.needVocal)
+  if (!channel) return message.reply({ content: message.guild.language.play.needVocal, allowedMentions: { repliedUser: true }})
   .then(msg => {
     msg.delete({ timeout: 3000 })
   })
   .catch(console.error);
   if (serverQueue && channel !== message.guild.me.voice.channel)
-    return message.reply(message.guild.language.play.sameVocal + ` ${message.client.user}`)
+    return message.reply({ content: message.guild.language.play.sameVocal + ` ${message.client.user}`, allowedMentions: { repliedUser: true }})
     .then(msg => {
       msg.delete({ timeout: 3000 })
     })
@@ -49,7 +49,7 @@ module.exports.run = async (client, message, args) => {
         if (res.statusCode == "302") {
           return message.client.commands.get("play").run(client, message, [res.headers.location]);
         } else {
-          return message.reply(message.guild.language.play.urlNoFound)
+          return message.reply({ content: message.guild.language.play.urlNoFound, allowedMentions: { repliedUser: true }})
           .then(msg => {
             msg.delete({ timeout: 3000 })
           })
@@ -58,9 +58,9 @@ module.exports.run = async (client, message, args) => {
       });
     } catch (error) {
       console.error(error);
-      return message.reply(error.message).catch(console.error);
+      return message.reply({ content: error.message, allowedMentions: { repliedUser: true }}).catch(console.error);
     }
-    return message.reply("url redirection...")
+    return message.reply({ content: "url redirection...", allowedMentions: { repliedUser: true }})
     .then(msg => {
       msg.delete({ timeout: 3000 })
     })
@@ -91,7 +91,7 @@ module.exports.run = async (client, message, args) => {
       };
     } catch (error) {
       console.error(error);
-      return message.reply(error.message).catch(console.error);
+      return message.reply({ content: error.message, allowedMentions: { repliedUser: true }}).catch(console.error);
     }
   }
 

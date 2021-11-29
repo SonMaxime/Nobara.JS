@@ -16,7 +16,8 @@ module.exports.run = async (client, message, args, settings, dbUser, economyData
   .addField("Sell Item", '[AVIABLE SOON]()', true)
   .setFooter(message.guild.language.store.shopFooter)
 
-  message.channel.send(storeembed)
+  message.channel.send({ embeds: [storeembed] });
+
 }
 
 module.exports.help = {
