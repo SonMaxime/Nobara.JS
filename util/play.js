@@ -1,4 +1,3 @@
-const ytdl = require("erit-ytdl");
 const { MessageEmbed } = require('discord.js');
 const scdl = require("soundcloud-downloader").default;
 const { canModifyQueue, STAY_TIME } = require("./util");
