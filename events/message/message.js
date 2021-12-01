@@ -89,7 +89,7 @@ module.exports = async (client, message) => {
   const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.help.aliases && cmd.help.aliases.includes(commandName));
   if (!command) return;
 
-  if (command.help.permissions && !message.member.hasPermission('BAN_MEMBERS')) return message.reply({content: message.guild.language.noPermToUse, allowedMentions: { repliedUser: true }});
+  if (command.help.permissions && !message.member.permissions.has('BAN_MEMBERS')) return message.reply({ content: message.guild.language.noPermToUse, allowedMentions: { repliedUser: true }});
 
   if (command.help.args && !args.length) {
     let noArgsReply = message.guild.language.messageEvent.noArgs + `${message.author}!`;
