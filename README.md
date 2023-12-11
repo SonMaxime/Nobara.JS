@@ -4,8 +4,8 @@
 # Nobara 🔨🔩
 
 <p>
-  <a href="https://twitter.com/SonMaxime_" target="_blank">
-    <img alt="Twitter: 444sonmaxime" src="https://img.shields.io/twitter/follow/444sonmaxime.svg?style=social" />
+  <a href="https://twitter.com/BrutalSonMaxime" target="_blank">
+    <img alt="Twitter: BrutalSonMaxime" src="https://img.shields.io/twitter/follow/BrutalSonMaxime.svg?style=social" />
   </a>
 </p>
 
